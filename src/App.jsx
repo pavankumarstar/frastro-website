@@ -25,7 +25,6 @@ import Tarot from './pages/services/TarotReading'
 import Business from './pages/services/Business';
 
 
-
 function App() {
   useEffect(() => {
     AOS.init({ duration: 1000 });

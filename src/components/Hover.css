@@ -1,0 +1,74 @@
+.hover-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  padding: 2rem;
+}
+
+@media (min-width: 768px) {
+  .hover-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hover-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.hover-card-wrapper {
+  position: relative;
+  display: block;
+  padding: 10px;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hover-image-overlay {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  z-index: 1;
+  filter: brightness(0.6);
+  transition: all 0.3s ease;
+}
+
+.card {
+  background-color: #000;
+  border: 1px solid transparent;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border 0.3s;
+  position: relative;
+  z-index: 2;
+}
+
+.hover-card-wrapper:hover .card {
+  border-color: #3b3b3b;
+}
+
+.card-inner {
+  padding: 1rem;
+  position: relative;
+  z-index: 3;
+}
+
+.card-title {
+  color: #fff;
+  font-weight: bold;
+  margin-top: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.card-description {
+  margin-top: 1.5rem;
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
