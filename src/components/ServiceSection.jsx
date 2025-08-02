@@ -2,7 +2,6 @@ import React from 'react';
 import './ServiceSection.css';
 import { FaHeart, FaComments, FaHandsHelping } from 'react-icons/fa';
 
-
 const ServiceSection = ({
   title,
   description,
@@ -27,6 +26,7 @@ const ServiceSection = ({
                 <p key={idx} className="service-paragraph">{para}</p>
               ))
             ) : (
+              
               <p className="service-paragraph">{description}</p>
             )}
             

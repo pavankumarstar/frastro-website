@@ -33,9 +33,10 @@ const Header = () => {
         <NavLink to="/" className="logo" onClick={() => setMenuOpen(false)}>
           Astrology
         </NavLink>
-
+      
         <nav className={`nav-links ${menuOpen ? 'open' : ''}`} ref={navRef}>
           <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
+          
           <NavLink to="/about" onClick={() => setMenuOpen(false)}>About Us</NavLink>
 
           <div

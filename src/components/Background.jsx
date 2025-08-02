@@ -14,23 +14,34 @@ const beams = [
   { initialX: 1200, translateX: 1200, duration: 6, repeatDelay: 4, delay: 2, className: "beam-thin" },
 ];
 
-const Background = ({ children }) => {
+const Background = ({ children, className = "" }) => {
   const containerRef = useRef(null);
   const parentRef = useRef(null);
 
   return (
-    <div ref={parentRef} className="background-wrapper">
-      {beams.map((beam, idx) => (
-        <Beam key={`beam-${idx}`} beamOptions={beam} parentRef={parentRef} containerRef={containerRef} />
-      ))}
-      {children}
-      <div ref={containerRef} className="beam-shadow"></div>
+    <div ref={parentRef} className={`background-wrapper ${className}`}>
+      {/* beams layer */}
+      <div className="beams-container" aria-hidden="true">
+        {beams.map((beam, idx) => (
+          <Beam
+            key={`beam-${idx}`}
+            beamOptions={beam}
+            parentRef={parentRef}
+            containerRef={containerRef}
+          />
+        ))}
+        <div ref={containerRef} className="beam-shadow" />
+      </div>
+
+      {/* foreground content: anything you pass in sits on top */}
+      <div className="background-foreground">{children}</div>
     </div>
   );
 };
 
 export default Background;
 
+/* Beam + Explosion unchanged from your version */
 const Beam = ({ beamOptions = {}, parentRef, containerRef }) => {
   const beamRef = useRef(null);
   const [collision, setCollision] = useState({ detected: false, coordinates: null });
@@ -39,7 +50,12 @@ const Beam = ({ beamOptions = {}, parentRef, containerRef }) => {
 
   useEffect(() => {
     const checkCollision = () => {
-      if (!cycleCollisionDetected && beamRef.current && containerRef.current && parentRef.current) {
+      if (
+        !cycleCollisionDetected &&
+        beamRef.current &&
+        containerRef.current &&
+        parentRef.current
+      ) {
         const beamRect = beamRef.current.getBoundingClientRect();
         const containerRect = containerRef.current.getBoundingClientRect();
         const parentRect = parentRef.current.getBoundingClientRect();

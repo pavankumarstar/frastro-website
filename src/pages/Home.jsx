@@ -1,46 +1,59 @@
 import React from 'react';
 import './Home.css';
-import zodiac from '../assets/images/love-black.jpg';
-import palm from '../assets/images/palm-reading.jpg';
-import cosmic from '../assets/images/spiritual-healing.jpg';
-import Carousel from '../components/Carousel'
+// import zodiac from '../assets/images/love-black.jpg';
+// import palm from '../assets/images/palm-reading.jpg';
+// import cosmic from '../assets/images/spiritual-healing.jpg';
+// import Carousel from '../components/Carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import Background from '../components/Background';
+// import { HoverEffect } from '../components/Hover';
+import ClientTestimonials from '../components/ClientTestimonials';
+import Cards from '../components/Home/Cards';
+import Content from '../components/Home/Content';
+
+import { motion } from 'framer-motion';
+import { ThreeDMarquee } from '../components/Marquee';
 
 const Home = () => {
   return (
     <div className="home">
-      <section className="home-carousel">
+{/*       
         <Carousel
           images={[zodiac, palm, cosmic]}
           autoplay={true}
           direction="up"
         >
+        </Carousel> */}
+        <div className='about-marquee'>
+                        <ThreeDMarquee
+                  images={[
+                    "/images/as1.png",
+                    "/images/as2.jpg",
+                    "/images/as3.jpg",
+                    "/images/as4.jpg",
+                    "/images/as5.jpg",
+                    "/images/as6.jpg",
+                    "/images/as7.jpg",
+                    "/images/as8.jpg",
+                    "/images/as9.jpg",
+                    "/images/as10.jpg",
+                    "/images/as11.jpg",
+                    "/images/as12.jpg"
+                  ]}/>
+              </div>
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+            <Content
+           mainImage='/images/as2.jpg'
+           overlayImage='/images/as3.jpg'
+           title='Know About Astrology'
+           description={`It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it esdehas a more-or less normal distribution of letters.
 
-        </Carousel>
-      </section>
-      <section className='home-service'>
-
-
-      </section>
-
-
-      {/* Content */}
-      <section className="home-content">
-        <div className="content-box fade-in-up">
-          <h2>What We Offer</h2>
-          <p>We provide professional astrology services for love marriage, relationship issues, palm reading, and more. Our guidance is trusted by thousands across the globe.</p>
-        </div>
-        <div className="content-box fade-in-up delay">
-          <h2>Why Choose Us?</h2>
-          <ul>
-            <li>✅ 20+ Years of Experience</li>
-            <li>✅ Personalized Reports</li>
-            <li>✅ Confidential & Accurate Readings</li>
-          </ul>
-        </div>
-        <Background />
-      </section>
+As opposed to using 'Content here, content here', making it look likesdesdee readable English. Many desktop publishing packages and web page editors sdesnow use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will usdencover many web sites still in their web page editors sdesnow infancy.`}
+           phone='+91 1800-124-105'
+          />
+        </motion.div>
+          
+          <Cards/>
+          <ClientTestimonials/>
     </div>
   );
 };

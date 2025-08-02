@@ -9,9 +9,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100vw;
+  /* width: 100vw; */
   overflow: hidden;
-  padding: 40px 0;
+  
   box-sizing: border-box;
 
 }

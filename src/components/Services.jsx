@@ -24,6 +24,7 @@ const Services = () => {
         {services.map((service, index) => (
           <div className="service-card" key={index}>
             <h3>{service.title}</h3>
+            
             <p>{service.description}</p>
           </div>
         ))}

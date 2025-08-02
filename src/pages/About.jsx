@@ -3,13 +3,14 @@ import './About.css';
 import FAQSection from '../components/FAQSection';
 // import { Boxes } from '../components/Boxes';
 
-import { ThreeDMarquee } from '../components/Marquee';
+// import { ThreeDMarquee } from '../components/Marquee';
+// import { Boxes } from '../components/Boxes';
 
 
 const About = () => {
   return (
     <div className="">
-      <div className='about-marquee'>
+      {/* <div className='about-marquee'>
                 <ThreeDMarquee
           images={[
             "/images/as1.png",
@@ -25,7 +26,8 @@ const About = () => {
             "/images/as11.jpg",
             "/images/as12.jpg"
           ]}/>
-      </div>
+      </div> */}
+      {/* <Boxes/> */}
       <section className="faq-section">
        <FAQSection />
       </section>
