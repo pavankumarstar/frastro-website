@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
+import { motion } from 'framer-motion';
+
 
 const ContactForm = () => {
   const [form, setForm] = useState({
@@ -83,18 +85,50 @@ const ContactForm = () => {
   return (
     <div className="contact-page">
       <div className="contact-header">
-        <img
-          src="/images/Contact.png"
-          alt="Decorative header"
-          className="header-image"
-          aria-hidden="true"
-        />
-      </div>
+  <img
+    src="/images/Contact.jpg"
+    alt="Decorative header"
+    className="header-image"
+    aria-hidden="true"
+  />
+
+  <motion.h1
+    className="headline"
+    initial="hidden"
+    animate="visible"
+    variants={{
+      hidden: { opacity: 0, y: 30 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.9, ease: 'easeOut' },
+      },
+    }}
+  >
+    Contact Us
+    <motion.span
+      aria-hidden="true"
+      style={{ display: 'block', height: 4, marginTop: 8, borderRadius: 2, background: '#ff8f1c' }}
+      initial={{ scaleX: 0 }}
+      animate={{ scaleX: 1 }}
+      transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
+    />
+  </motion.h1>
+</div>
+
 
       <div className="contact-content">
         <div className="contact-left">
           <span className="small-label">CONTACT</span>
-          <h2 className="headline">Get In Touch</h2>
+          <motion.h2
+                className="headline"
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.5 }}
+                transition={{ duration: 0.7, ease: 'easeOut' }}
+              >
+                Get In Touch
+          </motion.h2>
           <div className="contact-passage">
             <p>
               Vestibulum at leo purus. Etiam at vestibulum libero. Cras augue neque, finibus sit
@@ -125,8 +159,15 @@ const ContactForm = () => {
         </div>
 
         <div className="contact-right">
-          <form onSubmit={handleSubmit} className="form-box" aria-label="Contact form">
-            <input
+          <motion.form
+  onSubmit={handleSubmit}
+  className="form-box"
+  aria-label="Contact form"
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
+>
+   <input
               type="text"
               name="honeypot"
               value={form.honeypot}
@@ -207,7 +248,8 @@ const ContactForm = () => {
               </button>
             </div>
             {statusMsg && <div className="status-message">{statusMsg}</div>}
-          </form>
+</motion.form>
+
         </div>
       </div>
     </div>

@@ -6,7 +6,6 @@ const Location = () => {
             <FadeContent blur={true} duration={1000} easing="ease-out" initialOpacity={0}>
   Location content goes here
 </FadeContent>
-        
         </div>
     )
 }
