@@ -1,10 +1,12 @@
 import React from 'react';
 import ServiceSection from '../../components/ServiceSection';
 import { FaStar, FaMoon, FaQuestionCircle } from 'react-icons/fa';
+import Faq from '../../components/Faq';
 
 const TarotReading = () => {
   return (
-    <ServiceSection
+   <div>
+     <ServiceSection
       title="Tarot Card Reading"
       description={[
         "Seeking divine guidance for your life path? tarot card readings that reveal hidden truths, illuminate opportunities, and provide spiritual direction. His intuitive interpretations combine ancient wisdom with psychic insight to help you navigate life's challenges.",
@@ -25,6 +27,8 @@ const TarotReading = () => {
       buttonText="Book a Tarot Session"
       buttonLink="/contact"
     />
+    <Faq/>
+   </div>
   );
 };
 

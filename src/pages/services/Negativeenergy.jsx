@@ -1,10 +1,12 @@
 import React from 'react';
 import ServiceSection from '../../components/ServiceSection';
 import { FaRadiationAlt, FaWind, FaBolt } from 'react-icons/fa';
+import Faq from '../../components/Faq';
 
 const NegativeEnergy = () => {
   return (
-    <ServiceSection
+    <div>
+      <ServiceSection
       title="Negative Energy Removal"
       description={[
         "Feeling drained, experiencing bad luck, or sensing dark energy in your surroundings? a master energy healer in Canada, provides powerful negative energy removal services to cleanse your aura, purify your space, and restore positive vibrations using ancient Vedic techniques.",
@@ -25,6 +27,8 @@ const NegativeEnergy = () => {
       buttonText="Cleanse Your Energy Field"
       buttonLink="/contact"
     />
+    <Faq/>
+    </div>
   );
 };
 

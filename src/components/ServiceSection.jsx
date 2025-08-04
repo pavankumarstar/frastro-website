@@ -1,11 +1,17 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './ServiceSection.css';
-import { FaHeart, FaComments, FaHandsHelping } from 'react-icons/fa';
+import { FaHandsHelping } from 'react-icons/fa';
+import Faq from './Faq';
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+};
+
+const slideFromLeft = {
+  hidden: { opacity: 0, x: -50 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.4, ease: 'easeOut' } }
 };
 
 const ServiceSection = ({
@@ -17,6 +23,15 @@ const ServiceSection = ({
   buttonText,
   buttonLink
 }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <motion.section
       className="service-section"
@@ -33,29 +48,32 @@ const ServiceSection = ({
       <div className="service-content">
         <div className="service-text">
           <div className="service-description">
-            {Array.isArray(description) ? (
-              description.map((para, idx) => (
-                <p key={idx} className="service-paragraph">{para}</p>
-              ))
-            ) : (
-              <p className="service-paragraph">{description}</p>
-            )}
+            {Array.isArray(description)
+              ? description.map((para, idx) => (
+                  <p key={idx} className="service-paragraph">{para}</p>
+                ))
+              : <p className="service-paragraph">{description}</p>}
           </div>
         </div>
 
         <motion.div className="service-media" variants={fadeInUp}>
           <img src={imageSrc} alt={title} loading="lazy" />
+
           <div className="highlight-icons">
             {highlights.map((item, idx) => (
-              <motion.div
-                className="icon-box"
-                key={idx}
-                whileHover={{ scale: 1.1 }}
-                variants={fadeInUp}
-              >
-                {item.icon}
-                <p>{item.label}</p>
-              </motion.div>
+              <AnimatePresence key={idx}>
+                <motion.div
+                  className="icon-box"
+                  variants={isMobile ? slideFromLeft : fadeInUp}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.3 }}
+                  whileHover={!isMobile ? { scale: 1.1 } : {}}
+                >
+                  {item.icon}
+                  <p>{item.label}</p>
+                </motion.div>
+              </AnimatePresence>
             ))}
           </div>
         </motion.div>
@@ -78,6 +96,7 @@ const ServiceSection = ({
       >
         {buttonText}
       </motion.a>
+      
     </motion.section>
   );
 };

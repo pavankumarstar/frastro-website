@@ -1,9 +1,11 @@
 import React from 'react';
 import ServiceSection from '../../components/ServiceSection';
 import { FaMagic, FaShieldAlt, FaSun } from 'react-icons/fa';
+import Faq from '../../components/Faq';
 
 const BlackMagic = () => {
   return (
+    <div>
     <ServiceSection
       title="Black Magic Removal"
       description={[
@@ -25,6 +27,9 @@ const BlackMagic = () => {
       buttonText="Protect Yourself Now"
       buttonLink="/contact"
     />
+    <Faq/>
+    </div>
+    
   );
 };
 

@@ -1,10 +1,12 @@
 import React from 'react';
 import ServiceSection from '../../components/ServiceSection';
 import { FaHeartbeat, FaLeaf, FaMedkit } from 'react-icons/fa';
+import Faq from '../../components/Faq';
 
 const HealthProblem = () => {
   return (
-    <ServiceSection
+    <div>
+      <ServiceSection
       title="Health Problem Remedies"
       description={[
         "Struggling with chronic health issues or unexplained ailments? a renowned energy healer in Canada, offers powerful Vedic remedies and spiritual healing solutions to address the root causes of health problems and restore your physical and mental wellbeing.",
@@ -25,6 +27,8 @@ const HealthProblem = () => {
       buttonText="Start Your Healing Journey"
       buttonLink="/contact"
     />
+    <Faq/>
+    </div>
   );
 };
 

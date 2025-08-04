@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import emailjs from '@emailjs/browser';
+// import emailjs from '@emailjs/browser';
 import './Contact.css';
 import { motion } from 'framer-motion';
 import Map from '../components/Map';
@@ -34,42 +34,42 @@ const ContactForm = () => {
     const whatsappNumber = '917483969594';
     window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, '_blank');
 
-    try {
-      if (
-        process.env.REACT_APP_EMAILJS_SERVICE_ID &&
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID &&
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-      ) {
-        await emailjs.send(
-          process.env.REACT_APP_EMAILJS_SERVICE_ID,
-          process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-          { name, sunSign, email, phone, message, datetime: new Date().toLocaleString() },
-          process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-        );
-        console.log('Email sent');
-      } else {
-        console.warn('EmailJS vars missing');
-      }
-    } catch (err) {
-      console.error('EmailJS error', err);
-      setStatusMsg('Email failed to send.');
-    }
+    // try {
+    //   if (
+    //     process.env.REACT_APP_EMAILJS_SERVICE_ID &&
+    //     process.env.REACT_APP_EMAILJS_TEMPLATE_ID &&
+    //     process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+    //   ) {
+    //     await emailjs.send(
+    //       process.env.REACT_APP_EMAILJS_SERVICE_ID,
+    //       process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+    //       { name, sunSign, email, phone, message, datetime: new Date().toLocaleString() },
+    //       process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+    //     );
+    //     console.log('Email sent');
+    //   } else {
+    //     console.warn('EmailJS vars missing');
+    //   }
+    // } catch (err) {
+    //   console.error('EmailJS error', err);
+    //   setStatusMsg('Email failed to send.');
+    // }
 
-    try {
-      if (process.env.REACT_APP_SHEET_API) {
-        await fetch(process.env.REACT_APP_SHEET_API, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify([[name, sunSign, email, phone, message, new Date().toLocaleString()]]),
-        });
-        console.log('Saved to sheet');
-      } else {
-        console.warn('Sheet API missing');
-      }
-    } catch (err) {
-      console.error('Sheet error', err);
-      setStatusMsg((prev) => (prev ? prev + ' Sheet save failed.' : 'Sheet save failed.'));
-    }
+    // try {
+    //   if (process.env.REACT_APP_SHEET_API) {
+    //     await fetch(process.env.REACT_APP_SHEET_API, {
+    //       method: 'POST',
+    //       headers: { 'Content-Type': 'application/json' },
+    //       body: JSON.stringify([[name, sunSign, email, phone, message, new Date().toLocaleString()]]),
+    //     });
+    //     console.log('Saved to sheet');
+    //   } else {
+    //     console.warn('Sheet API missing');
+    //   }
+    // } catch (err) {
+    //   console.error('Sheet error', err);
+    //   setStatusMsg((prev) => (prev ? prev + ' Sheet save failed.' : 'Sheet save failed.'));
+    // }
 
     if (!statusMsg) setStatusMsg('Your details were sent successfully!');
     setForm({

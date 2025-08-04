@@ -1,10 +1,12 @@
 import React from 'react';
 import ServiceSection from '../../components/ServiceSection';
 import { FaChartLine, FaBriefcase, FaHandshake } from 'react-icons/fa';
+import Faq from '../../components/Faq';
 
 const Business = () => {
   return (
-    <ServiceSection
+    <div>
+      <ServiceSection
       title="Business Problem Solutions"
       description={[
         "Facing financial losses, partnership conflicts, or stagnation in your business? a renowned business astrologer in Canada, offers powerful Vedic remedies and strategic astrological guidance to overcome challenges, attract prosperity, and ensure long-term success.",
@@ -25,6 +27,8 @@ const Business = () => {
       buttonText="Fix Your Business Issues"
       buttonLink="/contact"
     />
+    <Faq/>
+    </div>
   );
 };
 

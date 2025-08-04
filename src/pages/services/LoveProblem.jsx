@@ -1,10 +1,12 @@
 import React from 'react';
 import ServiceSection from '../../components/ServiceSection';
 import { FaHeart, FaComments, FaHandsHelping } from 'react-icons/fa';
+import Faq from '../../components/Faq';
 
 const LoveProblem = () => {
   return (
-    <ServiceSection
+    <div>
+       <ServiceSection
       title="Couple Disputes Solutions"
       description={[
         "Struggling with love life challenges? A renowned love astrologer in Canada, offers powerful Vedic astrology solutions to attract your soulmate, heal broken relationships, and create lasting romantic connections through cosmic alignment.",
@@ -25,6 +27,8 @@ const LoveProblem = () => {
       buttonText="Resolve Your Relationship Conflicts"
       buttonLink="/contact"
     />
+    <Faq/>
+    </div>
   );
 };
 

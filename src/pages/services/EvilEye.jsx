@@ -1,10 +1,12 @@
 import React from 'react';
 import ServiceSection from '../../components/ServiceSection';
 import { FaEyeSlash, FaShieldAlt, FaWater } from 'react-icons/fa';
+import Faq from '../../components/Faq';
 
 const EvilEye = () => {
   return (
-    <ServiceSection
+ <div>
+     <ServiceSection
       title="Evil Eye Protection"
       description="Suffering from frequent bad luck or sudden health and wealth issues? Our Evil Eye protection rituals shield you from jealousy, envy, and harmful gazes."
       imageSrc="/images/evileye.jpg"
@@ -22,6 +24,8 @@ const EvilEye = () => {
       buttonText="Get Protected Now"
       buttonLink="/contact"
     />
+    <Faq/>
+ </div>
   );
 };
 

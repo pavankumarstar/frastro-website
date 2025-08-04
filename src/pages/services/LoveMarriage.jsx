@@ -1,10 +1,12 @@
 import React from 'react';
 import ServiceSection from '../../components/ServiceSection';
 import { FaRing, FaHeart, FaBalanceScale } from 'react-icons/fa';
+import Faq from '../../components/Faq';
 
 const LoveMarriage = () => {
   return (
-    <ServiceSection
+  <div>
+      <ServiceSection
       title="Love Marriage Solutions"
       description={[
         "Facing obstacles in your love marriage journey? A trusted Indian astrologer in Canada, offers powerful Vedic remedies to overcome family opposition, caste barriers, and karmic challenges preventing your union with your beloved.",
@@ -26,6 +28,8 @@ const LoveMarriage = () => {
       buttonText="Unite with Your Partner"
       buttonLink="/contact"
     />
+    <Faq/>
+  </div>
   );
 };
 
