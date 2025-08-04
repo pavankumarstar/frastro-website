@@ -4,10 +4,10 @@ import './Header.css';
 import { NavLink } from 'react-router-dom';
 
 const menuVariants = {
-  hidden: { opacity: 0, x: 10, scale: 0.95 },
+  hidden: { opacity: 0, y: -10, scale: 0.95 },
   visible: {
     opacity: 1,
-    x: 0,
+    y: 0,
     scale: 1,
     transition: {
       when: 'beforeChildren',
@@ -18,10 +18,11 @@ const menuVariants = {
   },
   exit: {
     opacity: 0,
-    x: 10,
+    y: -10,
     scale: 0.95,
     transition: { duration: 0.2, ease: 'easeIn' },
   },
+
 };
 
 const itemVariants = {

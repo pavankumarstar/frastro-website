@@ -84,11 +84,20 @@
 
   .dropdown-menu {
     position: static;
-    background: none;
-    padding: 0;
-    display: flex !important;
+    display: flex;
     flex-direction: column;
+    grid-template-columns: none; /* Remove grid */
     gap: 0.5rem;
+    padding: 0.5rem 0;
+    background-color: #222;
+    min-width: auto;
+    box-shadow: none;
+    border-radius: 4px;
+  }
+    .dropdown-menu a {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    white-space: normal;
   }
 }
 
@@ -106,6 +115,12 @@
 }
 
 /* Desktop dropdown menu grid layout */
+@media (min-width: 769px) {
+  .dropdown-menu{
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+  }
+}
 .dropdown-menu {
   position: absolute;
   top: 100%;
