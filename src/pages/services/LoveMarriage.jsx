@@ -7,8 +7,9 @@ const LoveMarriage = () => {
     <ServiceSection
       title="Love Marriage Solutions"
       description={[
-        "Facing obstacles in your love marriage journey? a trusted Indian astrologer in Canada, offers powerful Vedic remedies to overcome family opposition, caste barriers, and karmic challenges preventing your union with your beloved.",
-        "His specialized love marriage solutions have helped thousands of couples unite despite all odds, with proven astrological remedies to remove barriers, gain family approval, and ensure a harmonious married life blessed with cosmic approval."
+        "Facing obstacles in your love marriage journey? A trusted Indian astrologer in Canada, offers powerful Vedic remedies to overcome family opposition, caste barriers, and karmic challenges preventing your union with your beloved.",
+        "His specialized love marriage solutions have helped thousands of couples unite despite all odds, with proven astrological remedies to remove barriers, gain family approval, and ensure a harmonious married life blessed with cosmic approval.",
+        "Whether you're dealing with societal pressure or parental disapproval, his customized guidance and time-tested methods can bring clarity and cosmic alignment to your relationship path."
       ]}
       imageSrc="/images/lovemarriage.jpg"
       highlights={[

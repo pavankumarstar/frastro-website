@@ -40,6 +40,7 @@ const Faq = () => {
     >
       <div className="faq">
         <motion.h1
+          className="faq-heading"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
@@ -65,7 +66,7 @@ const Faq = () => {
             viewport={{ once: true }}
             transition={{ type: 'spring', stiffness: 100, damping: 20 }}
           >
-            <h1>Questions (FAQ’s)</h1>
+            <h1 className='faq-line'>Questions (FAQ’s)</h1>
             <div className="faq-items">
               {faqData.map((faq, index) => (
                 <motion.div
