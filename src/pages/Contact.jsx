@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
 import { motion } from 'framer-motion';
+import Map from '../components/Map';
 
 
 const ContactForm = () => {
@@ -252,6 +253,7 @@ const ContactForm = () => {
 
         </div>
       </div>
+      <Map />
     </div>
   );
 };

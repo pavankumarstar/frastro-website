@@ -32,11 +32,11 @@ As opposed to using 'Content here, content here', making it look likesdesdee rea
                 className="main-img"
                 loading="lazy"
               />
-              {active.overlay && (
-                <div className="symbol-overlay">
-                  <img src={active.overlay} alt="Overlay symbol" />
-                </div>
-              )}
+              {/* {active.overlay && (
+                // <div className="symbol-overlay">
+                //   <img src={active.overlay} alt="Overlay symbol" />
+                // </div>
+              )} */}
             </div>
           </div>
           <div className="nav-dots">

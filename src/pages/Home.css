@@ -1,14 +1,23 @@
-html, body {
-  margin: 0;
-  padding: 0;
+/* Hide carousel on large screens */
+.carousel-wrapper {
+  display: none;
 }
-.about-marquee{
+
+.about-marquee {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 100vw; */
   overflow: hidden;
   padding-bottom: 1px;
-  box-sizing: border-box;
+}
 
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .carousel-wrapper {
+    display: block;
+  }
+
+  .about-marquee {
+    display: none;
+  }
 }

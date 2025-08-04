@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './Location.css';
+import './Map.css';
 
-const Location = ({
+const Map = ({
   title = 'Visit Me',
   subtitle = 'Location',
   description = `Vestibulum at leo purus. Etiam at vestibulum libero. Cras augue neque, finibus sit amet pellentesque in, fermentum vel enim. Phasellus volutpat vulputate arcu, gravida lobortis auctor vitae. Suspendisse felis lacus, fermentum in mauris at, accumsan gravida eros. Fusce id ligula efficitur, feugiat vel, blandit enim. Vestibulum ante ipsum.`,
@@ -84,4 +84,4 @@ const Location = ({
   );
 };
 
-export default Location;
+export default Map;

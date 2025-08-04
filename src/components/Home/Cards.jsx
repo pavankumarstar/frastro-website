@@ -1,5 +1,5 @@
 import React from "react";
-import "./Cards.css"; // assume this file contains the styles below
+import "./Cards.css"; 
 
 const items = [
   { title: "Love Marriage", img: "/images/cards/love-marriage.jpg" },

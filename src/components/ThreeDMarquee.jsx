@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import "./Marquee.css";
+import "./ThreeDMarquee.css";
 
 export const ThreeDMarquee = ({ images }) => {
   const chunkSize = Math.ceil(images.length / 4);
