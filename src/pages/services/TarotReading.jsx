@@ -1,32 +1,17 @@
 import React from 'react';
-import ServiceSection from '../../components/ServiceSection';
-import { FaStar, FaMoon, FaQuestionCircle } from 'react-icons/fa';
 import Faq from '../../components/Faq';
+import SectionService from '../../components/Service/SectionService';
 
 const TarotReading = () => {
   return (
    <div>
-     <ServiceSection
-      title="Tarot Card Reading"
-      description={[
-        "Seeking divine guidance for your life path? tarot card readings that reveal hidden truths, illuminate opportunities, and provide spiritual direction. His intuitive interpretations combine ancient wisdom with psychic insight to help you navigate life's challenges.",
-        "Through the mystical tarot, he accesses cosmic knowledge to provide clarity on love, career, finances, and spiritual growth. His readings have helped thousands gain perspective, make empowered decisions, and understand their soul's journey."
-      ]}
-      imageSrc="/images/tarotreading.jpg"
-      highlights={[
-        { icon: <FaStar />, label: 'Clarity' },
-        { icon: <FaMoon />, label: 'Intuition' },
-        { icon: <FaQuestionCircle />, label: 'Guidance' },
-      ]}
-      solutions={[
-        'Celtic Cross (Comprehensive Life Reading)',
-        'Love & Relationship Spread',
-        'Career Path & Financial Guidance',
-        'Spiritual Growth & Karmic Insight',
-      ]}
-      buttonText="Book a Tarot Session"
-      buttonLink="/contact"
-    />
+       <SectionService 
+  buttonLabels={["The Lines", "The Hands", "The Fingers", "Scan your palm", "Read your palm"]}
+  paragraph1="First paragraph text here..."
+  imageSrc="/images/palm-reading.png"
+  paragraph2="Second paragraph content..."
+  paragraph3="Third paragraph content..."
+/>
     <Faq/>
    </div>
   );

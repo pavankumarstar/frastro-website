@@ -185,3 +185,41 @@
     font-size: 0.7rem;
   }
 }
+
+.icon-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 0.5rem;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  color: #2c2f48;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.icon-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -5px rgba(0, 0, 0, 0.2);
+  color: #25d366; /* WhatsApp green as highlight */
+}
+
+@media (max-width: 900px) {
+  .icon-link {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
+  }
+
+  .icon-buttons {
+    gap: 10px;
+  }
+}

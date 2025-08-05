@@ -16,14 +16,15 @@ export const ThreeDMarquee = ({ images }) => {
           <div className="marquee-grid">
             {chunks.map((subarray, colIndex) => (
               <motion.div
-                animate={{ y: colIndex % 2 === 0 ? 100 : -100 }}
-                transition={{
-                  duration: colIndex % 2 === 0 ? 10 : 15,
-                  repeat: Infinity,
-                  repeatType: "reverse",
-                }}
                 key={colIndex}
                 className="marquee-column"
+                animate={{ y: colIndex % 2 === 0 ? 100 : -100 }}
+                transition={{
+                  duration: colIndex % 2 === 0 ? 12 : 14,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                  ease: "easeInOut",
+                }}
               >
                 <GridLineVertical offset="80px" />
                 {subarray.map((image, imageIndex) => (
@@ -31,12 +32,10 @@ export const ThreeDMarquee = ({ images }) => {
                     <GridLineHorizontal offset="20px" />
                     <motion.img
                       whileHover={{ y: -10 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      transition={{ duration: 0.3 }}
                       src={image}
                       alt={`Image ${imageIndex + 1}`}
                       className="marquee-image"
-                      width={970}
-                      height={700}
                       loading="lazy"
                     />
                   </div>
@@ -53,17 +52,13 @@ export const ThreeDMarquee = ({ images }) => {
 const GridLineHorizontal = ({ offset = "200px" }) => (
   <div
     className="grid-line-horizontal"
-    style={{
-      "--offset": offset,
-    }}
+    style={{ "--offset": offset }}
   />
 );
 
 const GridLineVertical = ({ offset = "150px" }) => (
   <div
     className="grid-line-vertical"
-    style={{
-      "--offset": offset,
-    }}
+    style={{ "--offset": offset }}
   />
 );

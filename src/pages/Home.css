@@ -12,7 +12,7 @@
 }
 
 /* Media query for mobile screens */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .carousel-wrapper {
     display: block;
   }
@@ -20,4 +20,4 @@
   .about-marquee {
     display: none;
   }
-}
+} */

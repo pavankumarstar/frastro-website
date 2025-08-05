@@ -104,18 +104,26 @@ const About = () => {
           </div>
 
           <div className="social-icons">
-            <button aria-label="Twitter" type="button" className="social-btn">
-              <FaTwitter />
-            </button>
-            <button aria-label="Facebook" type="button" className="social-btn">
-              <FaFacebookF />
-            </button>
-            <button aria-label="YouTube" type="button" className="social-btn">
-              <FaYoutube />
-            </button>
-            <button aria-label="Instagram" type="button" className="social-btn">
-              <FaInstagram />
-            </button>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                <button className="social-btn">
+                  <FaTwitter />
+                </button>
+              </a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <button className="social-btn">
+                  <FaFacebookF />
+                </button>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                <button className="social-btn">
+                  <FaYoutube />
+                </button>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <button className="social-btn">
+                  <FaInstagram />
+                </button>
+              </a>
           </div>
         </motion.div>
 

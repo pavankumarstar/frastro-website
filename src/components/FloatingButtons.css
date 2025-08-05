@@ -1,0 +1,36 @@
+/* components/FloatingButtons.css */
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.floating-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.floating-btn.whatsapp {
+  background-color: #25D366;
+}
+
+.floating-btn.phone {
+  background-color: #007BFF;
+}
+
+.floating-btn:hover {
+  filter: brightness(1.2);
+}

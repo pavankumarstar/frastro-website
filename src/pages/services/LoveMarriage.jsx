@@ -2,32 +2,18 @@ import React from 'react';
 import ServiceSection from '../../components/ServiceSection';
 import { FaRing, FaHeart, FaBalanceScale } from 'react-icons/fa';
 import Faq from '../../components/Faq';
+import SectionService from '../../components/Service/SectionService';
 
 const LoveMarriage = () => {
   return (
   <div>
-      <ServiceSection
-      title="Love Marriage Solutions"
-      description={[
-        "Facing obstacles in your love marriage journey? A trusted Indian astrologer in Canada, offers powerful Vedic remedies to overcome family opposition, caste barriers, and karmic challenges preventing your union with your beloved.",
-        "His specialized love marriage solutions have helped thousands of couples unite despite all odds, with proven astrological remedies to remove barriers, gain family approval, and ensure a harmonious married life blessed with cosmic approval.",
-        "Whether you're dealing with societal pressure or parental disapproval, his customized guidance and time-tested methods can bring clarity and cosmic alignment to your relationship path."
-      ]}
-      imageSrc="/images/lovemarriage.jpg"
-      highlights={[
-        { icon: <FaRing />, label: 'Marriage Alignment' },
-        { icon: <FaHeart />, label: 'Love Support' },
-        { icon: <FaBalanceScale />, label: 'Family Acceptance' },
-      ]}
-      solutions={[
-        'Family Approval & Acceptance Remedies',
-        'Inter-caste/Interfaith Marriage Solutions',
-        'Love Marriage Astrological Consultation',
-        'Removal of Love Marriage Obstacles',
-      ]}
-      buttonText="Unite with Your Partner"
-      buttonLink="/contact"
-    />
+        <SectionService 
+  buttonLabels={["The Lines", "The Hands", "The Fingers", "Scan your palm", "Read your palm"]}
+  paragraph1="First paragraph text here..."
+  imageSrc="/images/palm-reading.png"
+  paragraph2="Second paragraph content..."
+  paragraph3="Third paragraph content..."
+/>
     <Faq/>
   </div>
   );

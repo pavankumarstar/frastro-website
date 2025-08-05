@@ -1,6 +1,6 @@
 .about-section {
   padding: 80px 20px 120px;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: 0 auto;
   font-family: system-ui, Georgia, serif;
   color: #1f273d;
@@ -12,7 +12,9 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: clamp(220px, 40vw, 420px);
+  /* Remove clamp-based fixed height so background can expand naturally */
+  min-height: 260px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,6 +65,23 @@
   border-radius: 2px;
   background: #ff8f1c;
   transform-origin: left center;
+}
+.about-section {
+  position: relative;
+  background-image: url('/public/images/back.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #1f273d;
+}
+
+.about-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  
+  pointer-events: none;
+  z-index: 0;
 }
 
 .about-inner {
@@ -175,7 +194,7 @@
   background: transparent;
   text-decoration: none;
   font-size: 1.1rem;
-  transition: background .25s ease, color .25s ease;
+  transition: background .25s ease, color 0.25s ease;
   cursor: pointer;
 }
 
@@ -196,16 +215,17 @@
 .image-wrapper {
   position: relative;
   max-width: 600px;
-  height: 500px;
+  width: 100%;
+  /* remove fixed height so it scales with image aspect ratio */
+  height: auto;
   overflow: hidden;
   border-radius: 12px;
   background: none;
 }
-
 .about-image {
-  position: absolute;
-  inset: 0;
-  height: 100%;
+  position: relative;
+  width: 100%;
+  height: auto;
   object-fit: cover;
   object-position: center center;
   display: block;
@@ -233,19 +253,26 @@
 @media (max-width: 1024px) {
   .about-inner {
     flex-direction: column-reverse;
-    gap: 40px;
+    gap: 24px; /* tighter on mobile */
   }
 
   .about-headline {
-    font-size: 2.8rem;
+    font-size: 2.4rem; /* slightly smaller for very small screens */
   }
 
-  .underline-wrapper {
-    margin: 8px 0 12px;
+  .zodiac-nav {
+    justify-content: center;
   }
 
   .about-left {
     align-items: center;
     text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-header {
+    padding: 40px 0;
+    min-height: 220px;
   }
 }

@@ -31,12 +31,6 @@ const Faq = () => {
   return (
     <div
       className="faq-wrapper"
-      // style={{
-      //   backgroundImage: `url(${backgroundImage})`,
-      //   backgroundSize: 'cover',
-      //   backgroundPosition: 'center',
-      //   backgroundRepeat: 'no-repeat',
-      // }}
     >
       <div className="faq">
         <motion.h1

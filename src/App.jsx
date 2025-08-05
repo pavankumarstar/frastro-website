@@ -23,6 +23,11 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import Tarot from './pages/services/TarotReading'
 import Business from './pages/services/Business';
+import FloatingButtons from './components/FloatingButtons';
+import SocialSidebar from './components/SocialSidebar';
+import ScrollToTop from './components/ScrollToTop';
+import Banner from './components/Banner';
+import AstroAlert from './components/AstroAlert';
 
 
 function App() {
@@ -32,7 +37,12 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop/>
+      <Banner/>
       <Header />
+      <AstroAlert/>
+      
+      <SocialSidebar/>
       <main className="min-h-screen bg-black text-white p-6">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -55,6 +65,7 @@ function App() {
 
         </Routes>
       </main>
+      <FloatingButtons/>
       <Footer />
     </Router>
   );

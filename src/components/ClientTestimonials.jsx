@@ -1,62 +1,65 @@
 import React from 'react';
 import './ClientTestimonials.css';
+import Avatar from 'react-avatar';
+
 
 const ClientTestimonials = () => {
   const testimonials = [
     {
-      text: "Master Shiva reading revealed career opportunities I never would have considered. Within months, I found my true calling.",
-      author: "Sarah Johnson",
-      position: "Canada , Toronto",
-      avatar: "",
-      delay: "0s"
+    text: "Master Shiva reading revealed career opportunities I never would have considered. Within months, I found my true calling.",
+    author: "Sarah Johnson",
+    position: "Canada, Toronto",
+    image: "https://randomuser.me/api/portraits/women/44.jpg", // ✅ sample avatar
+    delay: "0s"
     },
     {
-      text: "The relationship analysis helped me understand karmic patterns I've been repeating for lifetimes. Profound healing followed.",
-      author: "Michael Chen",
-      position: "Canada , Montreal",
-      avatar: "MC",
-      delay: "0.2s"
+          text: "The relationship analysis helped me understand karmic patterns...",
+    author: "Michael Chen",
+    position: "Canada, Montreal",
+    image: "https://randomuser.me/api/portraits/men/31.jpg", // ✅ another avatar
+    delay: "0.2s"
     },
     {
       text: "Master Shiva prediction about my financial situation came true to the month. The remedies he suggested made all the difference.",
       author: "Emily Rodriguez",
       position: "Canada , Calgary",
-      avatar: "ER",
+      image: "https://randomuser.me/api/portraits/women/27.jpg",
       delay: "0.4s"
     },
     {
       text: "Master Shiva black magic removal changed my life. I was facing unexplained problems for months, but after his powerful remedies, everything began to clear up—just as he predicted. His guidance brought peace and protection back into my life.",
       author: "David Thompson",
       position: "Canada , Vancouver",
-      avatar: "DT",
+      image: "https://randomuser.me/api/portraits/men/23.jpg",
       delay: "0.6s"
     },
     {
       text: "I had almost given up hope of getting married due to constant delays and family obstacles. Master Shiva guidance and astrological remedies worked wonders—within months, everything aligned, and my marriage was fixed smoothly.",
       author: "Lisa Park",
       position: "Canada , Edmonton",
-      avatar: "LP",
+      image: "https://randomuser.me/api/portraits/women/12.jpg",
       delay: "0.8s"
     },
     {
       text: "Master Shiva spiritual healing brought me inner peace during the darkest phase of my life. His sessions helped me reconnect with my energy, clear negativity, and feel truly balanced for the first time in years.",
       author: "James Wilson",
       position: "Canada ,  Winnipeg",
-      avatar: "JW",
+      image: "https://randomuser.me/api/portraits/men/11.jpg",
       delay: "1s"
     }
   ];
 
   const carouselTestimonials = [
-    { text: "Amazing experience! Highly recommend their services.", author: "Alex Smith", rating: 5 },
-    { text: "Professional, reliable, and results-driven team.", author: "Maria Garcia", rating: 5 },
-    { text: "Exceeded expectations in every aspect of the project.", author: "Robert Kim", rating: 5 },
-    { text: "Innovative solutions that truly made a difference.", author: "Jennifer Lee", rating: 5 },
-    { text: "Outstanding communication and project delivery.", author: "Tom Anderson", rating: 5 },
-    { text: "They understand client needs and deliver perfectly.", author: "Sophie Brown", rating: 5 },
-    { text: "Top-notch quality and attention to detail.", author: "Carlos Martinez", rating: 5 },
-    { text: "Reliable partners for any complex project.", author: "Anna Davis", rating: 5 }
-  ];
+  { text: "Master Shiva's remedies changed my life—my career took off just weeks after his reading.", author: "Priya Desai", rating: 5 },
+  { text: "The vastu correction he suggested brought immediate peace to my home.", author: "Ravi Malhotra", rating: 5 },
+  { text: "His horoscope reading was incredibly accurate. I felt deeply understood.", author: "Nina Patel", rating: 5 },
+  { text: "Master Shiva helped me remove years of negative energy holding me back.", author: "Aarav Mehta", rating: 5 },
+  { text: "The gemstone recommendation brought clarity and confidence in my decision-making.", author: "Kavita Sharma", rating: 5 },
+  { text: "Every prediction has unfolded exactly as he said. He's truly gifted.", author: "Rajiv Nair", rating: 5 },
+  { text: "I was skeptical at first, but his spiritual guidance healed my relationship with my father.", author: "Meera S.", rating: 5 },
+  { text: "Astrology sessions with Master Shiva feel like therapy—he’s helped me reconnect with my soul.", author: "Aman Verma", rating: 5 }
+];
+
 
   const QuoteIcon = () => (
     <svg className="quote-icon" fill="currentColor" viewBox="0 0 24 24">
@@ -88,9 +91,15 @@ const ClientTestimonials = () => {
               <QuoteIcon />
               <p className="testimonial-text">"{testimonial.text}"</p>
               <div className="testimonial-author">
-                <div className="author-avatar">
-                  {testimonial.avatar}
-                </div>
+                <Avatar 
+ name={testimonial.author}
+  src={testimonial.image} // <-- use the image if present
+  round={true}
+  size="48"
+  textSizeRatio={2}
+  color="#FFD700"
+  fgColor="#000"
+/>
                 <div className="author-info">
                   <h4>{testimonial.author}</h4>
                   <p>{testimonial.position}</p>

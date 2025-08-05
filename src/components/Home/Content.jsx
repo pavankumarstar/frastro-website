@@ -1,71 +1,157 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Content.css';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const swipeConfidenceThreshold = 10000; // adjust sensitivity
+const swipePower = (offset, velocity) => {
+  return Math.abs(offset) * velocity;
+};
 
 const Content = ({
   images = [
-    { src: '/images/as3.jpg', overlay: '/images/as3.png', alt: 'Astrology 1' },
-    { src: '/images/as4.jpg', overlay: '/images/overlay2.png', alt: 'Astrology 2' },
-    { src: '/images/as5.jpg', overlay: '/images/overlay3.png', alt: 'Astrology 3' },
-    { src: '/images/as6.jpg', overlay: '/images/overlay4.png', alt: 'Astrology 4' },
+    { src: '/images/content/onehome.jpg', alt: 'Astrology 1' },
+    { src: '/images/content/secondhome.jpg', alt: 'Astrology 2' },
+    { src: '/images/content/threehome.jpg', alt: 'Astrology 3' },
+    { src: '/images/content/fourhome.jpg', alt: 'Astrology 4' },
   ],
   title = 'Know About Astrology',
-  description = `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it esdehas a more-or less normal distribution of letters.
-
-As opposed to using 'Content here, content here', making it look likesdesdee readable English. Many desktop publishing packages and web page editors sdesnow use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will usdencover many web sites still in their web page editors sdesnow infancy.`,
+  description = `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.`,
   phone = '+91 1800-124-105',
 }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const active = images[activeIndex] || {};
+  const [[activeIndex, direction], setIndex] = useState([0, 0]); // direction: 1=next, -1=prev
+  const intervalRef = useRef(null);
+
+  // Autoplay (forward)
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setIndex(([prev]) => [(prev + 1) % images.length, 1]);
+    }, 4000);
+    return () => clearInterval(intervalRef.current);
+  }, [images.length]);
+
+  // Manual navigation helpers
+  const paginate = (newDirection) => {
+    clearInterval(intervalRef.current); // reset autoplay on manual
+    setIndex(([prev]) => {
+      const nextIndex = (prev + newDirection + images.length) % images.length;
+      return [nextIndex, newDirection];
+    });
+    // restart autoplay after short delay
+    intervalRef.current = setInterval(() => {
+      setIndex(([prev]) => [(prev + 1) % images.length, 1]);
+    }, 4000);
+  };
+
+  const active = images[activeIndex];
+
+  const variants = {
+    enter: (dir) => ({
+      x: dir > 0 ? 300 : -300,
+      opacity: 0,
+      position: 'absolute',
+      zIndex: 0,
+    }),
+    center: {
+      x: 0,
+      opacity: 1,
+      position: 'relative',
+      zIndex: 1,
+    },
+    exit: (dir) => ({
+      x: dir > 0 ? -300 : 300,
+      opacity: 0,
+      position: 'absolute',
+      zIndex: 0,
+    }),
+  };
 
   return (
     <section className="content-section">
       <div className="content-inner">
+        {/* LEFT SIDE - IMAGE */}
         <div className="content-left">
           <div className="image-stack">
-            <div className="frame back-frame" />
-            <div className="frame middle-frame" />
+           
             <div className="image-wrapper">
-              <img
-                key={active.src}
-                src={active.src}
-                alt={active.alt || 'Astrology image'}
-                className="main-img"
-                loading="lazy"
-              />
-              {/* {active.overlay && (
-                // <div className="symbol-overlay">
-                //   <img src={active.overlay} alt="Overlay symbol" />
-                // </div>
-              )} */}
+              <AnimatePresence custom={direction} mode="wait">
+                <motion.img
+                  key={active?.src}
+                  src={active?.src}
+                  alt={active?.alt || 'Astrology image'}
+                  className="main-img"
+                  loading="lazy"
+                  custom={direction}
+                  variants={variants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    x: { type: 'spring', stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.2 },
+                  }}
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.2}
+                  onDragEnd={(e, { offset, velocity }) => {
+                    const swipe = swipePower(offset.x, velocity.x);
+                    if (swipe < -swipeConfidenceThreshold) {
+                      paginate(1);
+                    } else if (swipe > swipeConfidenceThreshold) {
+                      paginate(-1);
+                    }
+                  }}
+                />
+              </AnimatePresence>
+              {/* Optional arrows */}
+              <div className="nav-arrows">
+                <button
+                  aria-label="Previous"
+                  className="arrow-btn prev"
+                  onClick={() => paginate(-1)}
+                >
+                  ‹
+                </button>
+                <button
+                  aria-label="Next"
+                  className="arrow-btn next"
+                  onClick={() => paginate(1)}
+                >
+                  ›
+                </button>
+              </div>
             </div>
-          </div>
-          <div className="nav-dots">
-            {images.map((_, idx) => (
-              <button
-                key={idx}
-                className={`dot ${idx === activeIndex ? 'active' : ''}`}
-                onClick={() => setActiveIndex(idx)}
-                aria-label={`Show image ${idx + 1}`}
-                aria-current={idx === activeIndex ? 'true' : 'false'}
-                type="button"
-              />
-            ))}
           </div>
         </div>
 
+        {/* RIGHT SIDE - TEXT */}
         <div className="content-right">
           <div className="content-title">
             <h1>{title}</h1>
             <div className="underline" />
           </div>
+
           <div className="content-description">
             {description.split('\n').map((para, i) => (
               <p key={i}>{para.trim()}</p>
             ))}
-            <button className="read-more-btn">READ MORE</button>
+            <motion.a
+              href="/about"
+              className="read-more-btn"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              READ MORE
+            </motion.a>
           </div>
+
+          {/* CONTACT SECTION */}
           <div className="content-contact">
-            <div className="contact-card">
+            <a
+              href="https://wa.me/911800124105"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-card"
+            >
               <div className="icon-circle">
                 <svg
                   width="24"
@@ -88,7 +174,7 @@ As opposed to using 'Content here, content here', making it look likesdesdee rea
                 <div className="small">Contact Our Expert Astrologers</div>
                 <div className="phone">{phone}</div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>

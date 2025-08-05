@@ -2,31 +2,18 @@ import React from 'react';
 import ServiceSection from '../../components/ServiceSection';
 import { FaHeartbeat, FaLeaf, FaMedkit } from 'react-icons/fa';
 import Faq from '../../components/Faq';
+import SectionService from '../../components/Service/SectionService';
 
 const HealthProblem = () => {
   return (
     <div>
-      <ServiceSection
-      title="Health Problem Remedies"
-      description={[
-        "Struggling with chronic health issues or unexplained ailments? a renowned energy healer in Canada, offers powerful Vedic remedies and spiritual healing solutions to address the root causes of health problems and restore your physical and mental wellbeing.",
-        "His holistic health solutions combine astrological insights with ancient healing practices to help thousands overcome persistent health challenges, boost immunity, and achieve balanced wellbeing through cosmic alignment and energy healing."
-      ]}
-      imageSrc="/images/healthproblem.jpg"
-      highlights={[
-        { icon: <FaHeartbeat />, label: 'Vitality' },
-        { icon: <FaLeaf />, label: 'Natural Balance' },
-        { icon: <FaMedkit />, label: 'Spiritual Healing' },
-      ]}
-      solutions={[
-        'Chronic Disease Remedies',
-        'Mental Health & Anxiety Solutions',
-        'Energy Healing & Chakra Balancing',
-        'Karmic Health Issue Resolution',
-      ]}
-      buttonText="Start Your Healing Journey"
-      buttonLink="/contact"
-    />
+        <SectionService 
+  buttonLabels={["The Lines", "The Hands", "The Fingers", "Scan your palm", "Read your palm"]}
+  paragraph1="First paragraph text here..."
+  imageSrc="/images/palm-reading.png"
+  paragraph2="Second paragraph content..."
+  paragraph3="Third paragraph content..."
+/>
     <Faq/>
     </div>
   );
