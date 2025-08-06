@@ -94,14 +94,20 @@ const Carousel = ({
       {loadedImages.length > 0 && (
         <AnimatePresence>
           <motion.img
-            key={currentIndex}
-            src={loadedImages[currentIndex]}
-            className="carousel-image"
-            initial="initial"
-            animate="animate"
-            exit={direction === "up" ? "exitUp" : "exitDown"}
-            variants={slideVariants}
-          />
+  key={currentIndex}
+  src={loadedImages[currentIndex]}
+  className="carousel-image"
+  initial="initial"
+  animate="animate"
+  exit={direction === "up" ? "exitUp" : "exitDown"}
+  variants={slideVariants}
+  drag="x"
+  dragConstraints={{ left: 0, right: 0 }}
+  onDragEnd={(e, info) => {
+    if (info.offset.x < -50) handleNext();     // swipe left
+    if (info.offset.x > 50) handlePrev();      // swipe right
+  }}
+/>
         </AnimatePresence>
       )}
     </div>

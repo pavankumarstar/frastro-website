@@ -12,6 +12,9 @@ import Content from '../components/Home/Content';
 import {ThreeDMarquee } from '../components/ThreeDMarquee';
 import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
+import SacredPooja from '../components/SacredPooja';
+import AstrologerSection from '../components/Home/AstrologerSection';
+import Faq from '../components/Faq';
 
 const Home = () => {
    const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -42,7 +45,7 @@ const Home = () => {
                   ]}/>
               </div> */}
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <Content
+            {/* <Content
            mainImage='/images/as2.jpg'
            overlayImage='/images/as3.jpg'
            title='Know About Astrology'
@@ -50,10 +53,13 @@ const Home = () => {
 
 As opposed to using 'Content here, content here', making it look likesdesdee readable English. Many desktop publishing packages and web page editors sdesnow use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will usdencover many web sites still in their web page editors sdesnow infancy.`}
            phone='+91 1800-124-105'
-          />
+          /> */}
+          
         </motion.div>
-        
+          <AstrologerSection/>
           <Cards/>
+          <Faq/>
+          <SacredPooja/>
           <ClientTestimonials/>
     </div>
   );

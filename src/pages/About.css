@@ -41,6 +41,7 @@
   z-index: 0;
 }
 
+
 .contact-header .headline {
   position: relative;
   z-index: 2;
@@ -101,6 +102,7 @@
   /* center internally on narrow; wide will be left by default */
   align-items: flex-start;
   text-align: left;
+  margin-left: 10px;
 }
 
 .about-headline {
@@ -186,10 +188,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
+ 
   height: 44px;
   border: 2px solid #8f379d;
-  border-radius: 50%;
+ 
   color: #8f379d;
   background: transparent;
   text-decoration: none;
@@ -273,6 +275,6 @@
 @media (max-width: 768px) {
   .contact-header {
     padding: 40px 0;
-    min-height: 220px;
+   
   }
 }

@@ -49,16 +49,16 @@ const ClientTestimonials = () => {
     }
   ];
 
-  const carouselTestimonials = [
-  { text: "Master Shiva's remedies changed my life—my career took off just weeks after his reading.", author: "Priya Desai", rating: 5 },
-  { text: "The vastu correction he suggested brought immediate peace to my home.", author: "Ravi Malhotra", rating: 5 },
-  { text: "His horoscope reading was incredibly accurate. I felt deeply understood.", author: "Nina Patel", rating: 5 },
-  { text: "Master Shiva helped me remove years of negative energy holding me back.", author: "Aarav Mehta", rating: 5 },
-  { text: "The gemstone recommendation brought clarity and confidence in my decision-making.", author: "Kavita Sharma", rating: 5 },
-  { text: "Every prediction has unfolded exactly as he said. He's truly gifted.", author: "Rajiv Nair", rating: 5 },
-  { text: "I was skeptical at first, but his spiritual guidance healed my relationship with my father.", author: "Meera S.", rating: 5 },
-  { text: "Astrology sessions with Master Shiva feel like therapy—he’s helped me reconnect with my soul.", author: "Aman Verma", rating: 5 }
-];
+//   const carouselTestimonials = [
+//   { text: "Master Shiva's remedies changed my life—my career took off just weeks after his reading.", author: "Priya Desai", rating: 5 },
+//   { text: "The vastu correction he suggested brought immediate peace to my home.", author: "Ravi Malhotra", rating: 5 },
+//   { text: "His horoscope reading was incredibly accurate. I felt deeply understood.", author: "Nina Patel", rating: 5 },
+//   { text: "Master Shiva helped me remove years of negative energy holding me back.", author: "Aarav Mehta", rating: 5 },
+//   { text: "The gemstone recommendation brought clarity and confidence in my decision-making.", author: "Kavita Sharma", rating: 5 },
+//   { text: "Every prediction has unfolded exactly as he said. He's truly gifted.", author: "Rajiv Nair", rating: 5 },
+//   { text: "I was skeptical at first, but his spiritual guidance healed my relationship with my father.", author: "Meera S.", rating: 5 },
+//   { text: "Astrology sessions with Master Shiva feel like therapy—he’s helped me reconnect with my soul.", author: "Aman Verma", rating: 5 }
+// ];
 
 
   const QuoteIcon = () => (
@@ -67,9 +67,9 @@ const ClientTestimonials = () => {
     </svg>
   );
 
-  const StarIcon = () => (
-    <span className="star">★</span>
-  );
+  // const StarIcon = () => (
+  //   <span className="star">★</span>
+  // );
 
   return (
     <div className="testimonials-container">
@@ -81,52 +81,39 @@ const ClientTestimonials = () => {
           <p>Discover why businesses trust us to deliver exceptional results</p>
         </div>
 
-        <div className="testimonials-grid">
-          {testimonials.map((testimonial, index) => (
-            <div 
-              key={index} 
-              className="testimonial-card"
-              style={{ '--delay': testimonial.delay }}
-            >
-              <QuoteIcon />
-              <p className="testimonial-text">"{testimonial.text}"</p>
-              <div className="testimonial-author">
-                <Avatar 
- name={testimonial.author}
-  src={testimonial.image} // <-- use the image if present
-  round={true}
-  size="48"
-  textSizeRatio={2}
-  color="#FFD700"
-  fgColor="#000"
-/>
-                <div className="author-info">
-                  <h4>{testimonial.author}</h4>
-                  <p>{testimonial.position}</p>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="testimonials-carousel">
-          <h3 className="carousel-title">More Happy Clients</h3>
-          <div className="carousel-container">
-            <div className="carousel-track">
-              {[...carouselTestimonials, ...carouselTestimonials].map((testimonial, index) => (
-                <div key={index} className="carousel-card">
-                  <div className="rating">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <StarIcon key={i} />
-                    ))}
-                  </div>
-                  <p className="text">"{testimonial.text}"</p>
-                  <p className="author">- {testimonial.author}</p>
-                </div>
-              ))}
-            </div>
+        <div className="testimonials-carousel-container">
+  <div className="testimonials-carousel">
+    {[...testimonials, ...testimonials].map((testimonial, index) => (
+      <div 
+        key={index} 
+        className="testimonial-card"
+        style={{ '--delay': testimonial.delay }}
+      >
+        <QuoteIcon />
+        <p className="testimonial-text">"{testimonial.text}"</p>
+        <div className="testimonial-author">
+          <Avatar 
+            name={testimonial.author}
+            src={testimonial.image}
+            round={true}
+            size="48"
+            textSizeRatio={2}
+            color="#FFD700"
+            fgColor="#000"
+          />
+          <div className="author-info">
+            <h4>{testimonial.author}</h4>
+            <p>{testimonial.position}</p>
           </div>
         </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+
+        
       </div>
     </div>
   );

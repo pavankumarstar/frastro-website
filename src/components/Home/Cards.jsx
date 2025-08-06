@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FaWhatsapp, FaPhoneAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "./Cards.css";
 import { Link } from "react-router-dom";
-
 
 const items = [
   { title: "Love Marriage", img: "/images/cards/love-marriage.jpg", link: "/services/love-marriage" },
@@ -13,11 +12,36 @@ const items = [
   { title: "Business Problem", img: "/images/cards/business-problem.jpg", link: "/services/business-problems" },
   { title: "Family Problem", img: "/images/cards/family-problem.jpg", link: "/services/family-problems" },
   { title: "Negative Energy", img: "/images/cards/negative.jpg", link: "/services/negative-energy" },
-  { title: "Plam Reading", img: "/images/cards/plamreading.jpg", link: "/services/palm-reading" },
+  { title: "Palm Reading", img: "/images/cards/plamreading.jpg", link: "/services/palm-reading" },
   { title: "Tarot Reading", img: "/images/cards/Tarot-reading.jpg", link: "/services/tarot-reading" },
   { title: "Health Problem", img: "/images/healthproblem.jpg", link: "/services/health-problem" },
 ];
+
 const Cards = () => {
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    let cardWidth = scrollContainer?.offsetWidth || 300;
+
+    const scroll = () => {
+      if (scrollContainer) {
+        const maxScrollLeft = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+        if (scrollContainer.scrollLeft >= maxScrollLeft) {
+          // scroll back to start
+          scrollContainer.scrollTo({ left: 0, behavior: "smooth" });
+        } else {
+          // scroll to next "page"
+          scrollContainer.scrollBy({ left: cardWidth, behavior: "smooth" });
+        }
+      }
+    };
+
+    const interval = setInterval(scroll, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="cards-wrapper">
       <div className="cards-header">
@@ -28,44 +52,42 @@ const Cards = () => {
           </p>
         </div>
       </div>
-      <div className="cards-grid">
+
+      <div className="cards-grid" ref={scrollRef}>
         {items.map((item, index) => (
-          <div className="card" key={index}>
+          <motion.div
+            className="card"
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.1 }}
+            viewport={{ once: true }}
+          >
             <div className="card-media">
               <img src={item.img} alt={item.title} loading="lazy" />
               <div className="card-overlay">
                 <div className="overlay-content">
                   <h2>{item.title}</h2>
-                  <Link to={item.link} className="learn-btn">Learn More →</Link>
-
-                  {/* Animated Icons */}
+                  <Link to={item.link} className="learn-btn">
+                    Learn More →
+                  </Link>
                   <motion.div
                     className="icon-buttons"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.5 }}
                   >
-                    <a
-                      href="tel:+1234567890"
-                      className="icon-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a href="tel:647-471-3459" className="icon-link">
                       <FaPhoneAlt />
                     </a>
-                    <a
-                      href="https://wa.me/1234567890"
-                      className="icon-link"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <a href="https://wa.me/16474713459" className="icon-link">
                       <FaWhatsapp />
                     </a>
                   </motion.div>
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>

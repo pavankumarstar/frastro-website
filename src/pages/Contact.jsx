@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
-// import emailjs from '@emailjs/browser';
 import './Contact.css';
 import { motion } from 'framer-motion';
-import Map from '../components/Map';
 
-
-const ContactForm = () => {
+const Contact = () => {
   const [form, setForm] = useState({
-    name: '',
-    sunSign: '',
+    firstName: '',
+    lastName: '',
     email: '',
-    phone: '',
+    subject: '',
     message: '',
     honeypot: '',
   });
@@ -19,75 +16,39 @@ const ContactForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((f) => ({ ...f, [name]: value }));
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (form.honeypot) return; // bot
+    if (form.honeypot) return;
     setSubmitting(true);
     setStatusMsg(null);
 
-    const { name, sunSign, email, phone, message } = form;
-    const waText = `Name: ${name}\nSun Sign: ${sunSign}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
-    const encodedText = encodeURIComponent(waText);
-    const whatsappNumber = '16474713459';
-    window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, '_blank');
+    const { firstName, lastName, email, subject, message } = form;
+    const waMessage = `Name: ${firstName} ${lastName}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`;
+    const encoded = encodeURIComponent(waMessage);
+    const number = '16474713459';
 
-    // try {
-    //   if (
-    //     process.env.REACT_APP_EMAILJS_SERVICE_ID &&
-    //     process.env.REACT_APP_EMAILJS_TEMPLATE_ID &&
-    //     process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-    //   ) {
-    //     await emailjs.send(
-    //       process.env.REACT_APP_EMAILJS_SERVICE_ID,
-    //       process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
-    //       { name, sunSign, email, phone, message, datetime: new Date().toLocaleString() },
-    //       process.env.REACT_APP_EMAILJS_PUBLIC_KEY
-    //     );
-    //     console.log('Email sent');
-    //   } else {
-    //     console.warn('EmailJS vars missing');
-    //   }
-    // } catch (err) {
-    //   console.error('EmailJS error', err);
-    //   setStatusMsg('Email failed to send.');
-    // }
+    window.open(`https://wa.me/${number}?text=${encoded}`, '_blank');
 
-    // try {
-    //   if (process.env.REACT_APP_SHEET_API) {
-    //     await fetch(process.env.REACT_APP_SHEET_API, {
-    //       method: 'POST',
-    //       headers: { 'Content-Type': 'application/json' },
-    //       body: JSON.stringify([[name, sunSign, email, phone, message, new Date().toLocaleString()]]),
-    //     });
-    //     console.log('Saved to sheet');
-    //   } else {
-    //     console.warn('Sheet API missing');
-    //   }
-    // } catch (err) {
-    //   console.error('Sheet error', err);
-    //   setStatusMsg((prev) => (prev ? prev + ' Sheet save failed.' : 'Sheet save failed.'));
-    // }
-
-    if (!statusMsg) setStatusMsg('Your details were sent successfully!');
     setForm({
-      name: '',
-      sunSign: '',
+      firstName: '',
+      lastName: '',
       email: '',
-      phone: '',
+      subject: '',
       message: '',
       honeypot: '',
     });
     setSubmitting(false);
+    setStatusMsg('Your message has been sent via WhatsApp!');
   };
 
   return (
-    <div className="contact-page">
+     <div>
       <div className="contact-header">
   <img
-    src="/images/Contact.jpg"
+    src="/images/about/slider1.jpg"
     alt="Decorative header"
     className="header-image"
     aria-hidden="true"
@@ -116,146 +77,104 @@ const ContactForm = () => {
     />
   </motion.h1>
 </div>
+    <div className="contact-container">
+      <motion.h2
+        className="contact-title"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7 }}
+      >
+        DIVINE <span className="highlight">ASSISTANCE</span>
+      </motion.h2>
+      <p className="subtitle">
+       Divine assistance of Astrologers active involvement in our lives to support and guide us.
+      </p>
 
-
-      <div className="contact-content">
-        <div className="contact-left">
-          <span className="small-label">CONTACT</span>
-          <motion.h2
-                className="headline"
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.5 }}
-                transition={{ duration: 0.7, ease: 'easeOut' }}
-              >
-                Get In Touch
-          </motion.h2>
-          <div className="contact-passage">
-            <p>
-              Vestibulum at leo purus. Etiam at vestibulum libero. Cras augue neque, finibus sit
-              amet pellentesque in, fermentum vel enim. Phasellus volutpat vulputate arcu, gravida
-              lobortis auctor vitae. Suspendisse felis lacus, fermentum in mauris at, accumsan
-              gravida eros. Fusce id ligula efficitur, feugiat vel, blandit enim. Vestibulum ante
-              ipsum.
-            </p>
-            <div className="contact-share">
-              <div className="info-line">
-                <span className="icon">📍</span>
-                <span>7A-7086 Airport road Mississauga L4T-2G8 ON Canada</span>
-              </div>
-              <div className="info-line">
-                <span className="icon">✉️</span>
-                <span>Stellarium@bold-themes.com</span>
-              </div>
-              <div className="info-line">
-                <span className="icon">📞</span>
-                <span>+1-6474-713-459</span>
-              </div>
-              <div className="info-line">
-                <span className="icon">📱</span>
-                <span>1-6474-713-459</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="contact-right">
-          <motion.form
-  onSubmit={handleSubmit}
-  className="form-box"
-  aria-label="Contact form"
-  initial={{ opacity: 0, y: 10 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.2, duration: 0.6, ease: 'easeOut' }}
->
-   <input
+      <motion.div
+        className="form-wrapper"
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 0.6 }}
+      >
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            name="honeypot"
+            style={{ display: 'none' }}
+            value={form.honeypot}
+            onChange={handleChange}
+          />
+          <div className="input-row">
+            <input
               type="text"
-              name="honeypot"
-              value={form.honeypot}
+              name="firstName"
+              placeholder="First Name"
+              required
+              value={form.firstName}
               onChange={handleChange}
-              style={{ display: 'none' }}
-              autoComplete="off"
-              tabIndex="-1"
             />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              required
+              value={form.lastName}
+              onChange={handleChange}
+            />
+          </div>
 
-            <div className="row">
-              <div className="field-group">
-                <input
-                  name="name"
-                  placeholder="Your Name*"
-                  value={form.name}
-                  onChange={handleChange}
-                  required
-                  aria-label="Your Name"
-                />
-              </div>
-              <div className="field-group">
-                <input
-                  name="sunSign"
-                  placeholder="Sun Sign*"
-                  value={form.sunSign}
-                  onChange={handleChange}
-                  required
-                  aria-label="Sun Sign"
-                />
-              </div>
-            </div>
+          <div className="input-row">
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              value={form.email}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="subject"
+              placeholder="Subject"
+              required
+              value={form.subject}
+              onChange={handleChange}
+            />
+          </div>
 
-            <div className="row">
-              <div className="field-group full">
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="E-mail*"
-                  value={form.email}
-                  onChange={handleChange}
-                  required
-                  aria-label="Email"
-                />
-              </div>
-            </div>
+          <textarea
+            name="message"
+            rows="5"
+            placeholder="Message"
+            required
+            value={form.message}
+            onChange={handleChange}
+          />
 
-            <div className="row">
-              <div className="field-group full">
-                <input
-                  name="phone"
-                  type="tel"
-                  placeholder="Your Phone*"
-                  value={form.phone}
-                  onChange={handleChange}
-                  required
-                  aria-label="Phone"
-                />
-              </div>
-            </div>
+          <div className="form-actions">
+            <button type="submit" disabled={submitting}>
+              {submitting ? 'Sending...' : 'Send'}
+            </button>
+          </div>
 
-            <div className="row">
-              <div className="field-group full">
-                <textarea
-                  name="message"
-                  placeholder="Your Message"
-                  value={form.message}
-                  onChange={handleChange}
-                  required
-                  aria-label="Message"
-                  rows={5}
-                />
-              </div>
-            </div>
+          {statusMsg && <div className="status">{statusMsg}</div>}
+        </form>
+      </motion.div>
 
-            <div className="submit-row">
-              <button type="submit" disabled={submitting}>
-                {submitting ? 'Sending...' : 'Send'}
-              </button>
-            </div>
-            {statusMsg && <div className="status-message">{statusMsg}</div>}
-</motion.form>
-
-        </div>
+      <div className="map-container">
+        <iframe
+          title="Google Map"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2884.2536335683226!2d-79.64755762399484!3d43.705277871099675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b3bfe9930d1c7%3A0x7a2a3817a03721ba!2s7086%20Airport%20Rd%20%237a%2C%20Mississauga%2C%20ON%20L4T%202G8%2C%20Canada!5e0!3m2!1sen!2sin!4v1754474426556!5m2!1sen!2sin"
+          width="100%"
+          height="450"
+          style={{ border: 0 }}
+          allowFullScreen=""
+          loading="lazy"
+        ></iframe>
       </div>
-      <Map />
     </div>
+     </div>
   );
 };
 
-export default ContactForm;
+export default Contact;

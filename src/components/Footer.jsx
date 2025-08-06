@@ -94,7 +94,7 @@ const Footer = () => {
           <h3>Contact</h3>
           <ul className="contact-list">
             <li>
-              📞 <a href="tel:+917483969594">+91-7483969594</a>
+              📞 <a href="tel:16474713459">16474713459</a>
             </li>
             <li>
               ✉️ <a href="mailto:astro@example.com">astro@example.com</a>
@@ -102,7 +102,7 @@ const Footer = () => {
             <li>📍 Delhi, India</li>
             <li>
               <a
-                href="https://wa.me/917483969594"
+                href="https://wa.me/16474713459"
                 aria-label="Chat on WhatsApp"
                 className="whatsapp-link"
                 target="_blank"

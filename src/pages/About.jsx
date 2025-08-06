@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Map from '../components/Map';
 import Faq from '../components/Faq';
 import ClientTestimonials from '../components/ClientTestimonials';
+import StatsSection from '../components/about/StatsSection';
 const zodiacItems = [
   { label: 'Pisces', symbol: '♓' },
   { label: 'Virgo', symbol: '♍' },
@@ -35,7 +36,7 @@ const About = () => {
     <div className="">
       <div className="contact-header">
         <img
-          src="/images/About-back.jpg"
+          src="/images/about/slider1.jpg"
           alt="Decorative header for about"
           className="header-image"
           aria-hidden="true"
@@ -76,7 +77,7 @@ const About = () => {
           className="about-left"
           variants={itemVariants}
         >
-          <h1 className="about-headline">Stella Mars</h1>
+          <h1 className="about-headline"> PANDIT RAJ ASTROLOGY</h1>
 
           <div className="zodiac-nav">
             {zodiacItems.map((z, i) => (
@@ -97,10 +98,10 @@ const About = () => {
 
           <div className="about-description">
             <p>
-              Aenean at lectus sed neque tempor volutpat quis id neque. Sed enim purus, ultrices vitae ultricies id, eleifend at eros. Sed non lorem a elit tempus semper. Nulla facilisi. Cras porttitor consequat nunc sed egestas. Vestibulum sit amet consectetur turpis. Nullam euismod purus at ipsum vehicula vulputate. Vivamus eu massa in libero ornare interdum elementum blandit mauris. Nullam porttitor id neque in rutrum.
+              Pandit Raj Astrologer in Canada with 25 years of experience in Astrology, Vastu-Shastra & Spiritualism. Astro means Astrology or Jyotisha and Science means its study. This study of science is completely based on the impact of planetary forces on the life on earth. Astro means Astrology or Jyotisha and Science means its study. This study of science is completely based on the impact of planetary forces on the life on earth. Be it human beings, or animals, or trees and plants, whoever has life on planet earth for them there is a certain astrological impact. Astroscience is in depth study and research of Planets, Zodiac signs from Aries to Pisces, 27 Nakshatra and 12 houses of Birthchart or Kundali.
             </p>
             <p>
-              Vestibulum non neque in mi dictum suscipit. Fusce quis facilisis metus. Vestibulum at leo purus. Etiam at vestibulum libero. Cras augue neque, finibus sit amet pellentesque in, fermentum vel enim.
+              Many areas of our life like our Personality, Characteristics, our Taste, Behavior and Looks can be easily derived by analyzing these things in the Horoscope. Infact, Astrology can also reveal many things from your Past, Present and Future. Vedic Astrology or Jyotisha can play a very important role for providing guidance about your Career field, Relationships, Education, Finance, and astrology also precisely predicts about your Health matters.
             </p>
           </div>
 
@@ -135,7 +136,7 @@ const About = () => {
           <div className="image-wrapper">
             <img
               className="about-image"
-              src="/images/about1.jpg"
+              src="https://i.pinimg.com/736x/af/3a/54/af3a54183372687dc2954c2a3d83c836.jpg"
               alt="Stella Mars"
             />
             <div className="image-overlay" />
@@ -144,8 +145,9 @@ const About = () => {
       </motion.div>
     </div>
     <div>
-      <Map/>
+      {/* <Map/> */}
       <Faq/>
+      <StatsSection/>
       <ClientTestimonials/>
     </div>
     </div>

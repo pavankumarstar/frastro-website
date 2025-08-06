@@ -1,0 +1,167 @@
+.sacred-pooja-wrapper {
+  padding: 40px 20px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.section-title span {
+  color: #1f273d;
+}
+
+.section-subtitle {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.pooja-card-container {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pooja-card {
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+  min-width: 280px;
+  background: #fff;
+  border: 1px solid #f1f1f1;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.pooja-card:hover {
+  transform: translateY(-5px);
+}
+
+.pooja-image {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.pooja-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: panImage 20s linear infinite;
+  transition: transform 0.3s ease;
+}
+.pooja-card:hover .pooja-image img {
+  animation-play-state: paused;
+}
+
+
+.pooja-tags {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.pooja-tag {
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.pooja-content {
+  padding: 16px;
+  text-align: left;
+}
+
+.pooja-duration {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.pooja-duration .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: orange;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+.pooja-content h3 {
+  font-size: 20px;
+  color: #e67e22;
+  margin: 4px 0 8px;
+}
+
+.pooja-content p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.book-btn {
+  margin-top: 12px;
+  background-color: #e67e22;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.book-btn:hover {
+  background-color: #d35400;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 22px;
+  }
+
+  .pooja-content h3 {
+    font-size: 18px;
+  }
+
+  .book-btn {
+    width: 100%;
+  }
+}
+
+@keyframes panImage {
+  0% {
+    transform: scale(1.05) translateY(0%);
+  }
+  100% {
+    transform: scale(1.05) translateY(-10%);
+  }
+}
+
+@media (min-width: 768px) {
+  .pooja-card-container {
+    overflow-x: visible;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .pooja-card {
+    flex: 0 0 30%;
+  }
+}
+.pooja-card-container::-webkit-scrollbar {
+  display: none;
+}

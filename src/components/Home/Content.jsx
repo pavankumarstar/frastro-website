@@ -13,9 +13,9 @@ const Content = ({
     { src: '/images/content/secondhome.jpg', alt: 'Astrology 2' },
   
   ],
-  title = 'Know About Astrology',
+  title = 'KNOW ABOUT ASTROLOGY',
   description = `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.`,
-  phone = '+91 1800-124-105',
+  phone = '+16474713459',
 }) => {
   const [[activeIndex, direction], setIndex] = useState([0, 0]); // direction: 1=next, -1=prev
   const intervalRef = useRef(null);
@@ -120,7 +120,7 @@ const Content = ({
           {/* CONTACT SECTION */}
           <div className="content-contact">
             <a
-              href="https://wa.me/911800124105"
+              href="https://wa.me/16474713459"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-card"

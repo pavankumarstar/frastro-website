@@ -4,20 +4,20 @@ import './Faq.css';
 
 const faqData = [
   {
-    question: 'Roboto Font use for this site',
-    answer: 'Roboto font is used for a modern and clean appearance.',
+    question: 'How do astrologers help?',
+    answer: 'Astrologers provide insights through birth chart analysis, helping with relationships, life decisions, emotional well-being, and career guidance.',
   },
   {
-    question: 'Cryptocurrency - Who Are Involved With It?',
-    answer: 'Traders, investors, miners, and developers are typically involved in cryptocurrency.',
+    question: 'Can astrology predict marriage?',
+    answer: 'TYes, by analyzing planetary positions, dashas, and transits in your birth chart, particularly focusing on Jupiters influence.',
   },
   {
-    question: 'Risks & Rewards Of Investing In Bitcoin?',
-    answer: 'Rewards include high returns; risks involve volatility and regulatory concerns.',
+    question: 'How does astrology predict marriage timing?',
+    answer: 'Through examination of dasha periods, planetary transits, and specific marriage yogas in the birth chart.',
   },
   {
-    question: 'Risks & Rewards Of Investing In Bitcoin?',
-    answer: 'Repeated to showcase multiple items. Same concerns apply.',
+    question: 'Is Psychic service accurate in Candan?',
+    answer: 'Absolutely, with numerous satisfied clients in Candan benefiting from his accurate readings and spiritual guidance.',
   },
 ];
 
