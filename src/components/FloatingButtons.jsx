@@ -7,7 +7,7 @@ const FloatingButtons = () => {
   return (
     <div className="floating-buttons">
       <motion.a
-        href="https://wa.me/yourNumber" // Replace with your WhatsApp number
+        href="https://wa.me/16474713459" // Replace with your WhatsApp number
         target="_blank"
         rel="noopener noreferrer"
         className="floating-btn whatsapp"
@@ -21,7 +21,7 @@ const FloatingButtons = () => {
       </motion.a>
 
       <motion.a
-        href="tel:+91XXXXXXXXXX" // Replace with your phone number
+        href="tel:16474713459" // Replace with your phone number
         className="floating-btn phone"
         whileHover={{ scale: 1.2, rotate: -5 }}
         whileTap={{ scale: 0.9 }}

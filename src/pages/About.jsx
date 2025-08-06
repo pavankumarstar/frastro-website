@@ -4,6 +4,7 @@ import { FaTwitter, FaFacebookF, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Map from '../components/Map';
 import Faq from '../components/Faq';
+import ClientTestimonials from '../components/ClientTestimonials';
 const zodiacItems = [
   { label: 'Pisces', symbol: '♓' },
   { label: 'Virgo', symbol: '♍' },
@@ -145,6 +146,7 @@ const About = () => {
     <div>
       <Map/>
       <Faq/>
+      <ClientTestimonials/>
     </div>
     </div>
       

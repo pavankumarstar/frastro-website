@@ -11,8 +11,7 @@ const Content = ({
   images = [
     { src: '/images/content/onehome.jpg', alt: 'Astrology 1' },
     { src: '/images/content/secondhome.jpg', alt: 'Astrology 2' },
-    { src: '/images/content/threehome.jpg', alt: 'Astrology 3' },
-    { src: '/images/content/fourhome.jpg', alt: 'Astrology 4' },
+  
   ],
   title = 'Know About Astrology',
   description = `It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters.`,
@@ -44,26 +43,7 @@ const Content = ({
 
   const active = images[activeIndex];
 
-  const variants = {
-    enter: (dir) => ({
-      x: dir > 0 ? 300 : -300,
-      opacity: 0,
-      position: 'absolute',
-      zIndex: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      position: 'relative',
-      zIndex: 1,
-    },
-    exit: (dir) => ({
-      x: dir > 0 ? -300 : 300,
-      opacity: 0,
-      position: 'absolute',
-      zIndex: 0,
-    }),
-  };
+
 
   return (
     <section className="content-section">
@@ -73,35 +53,28 @@ const Content = ({
           <div className="image-stack">
            
             <div className="image-wrapper">
-              <AnimatePresence custom={direction} mode="wait">
-                <motion.img
-                  key={active?.src}
-                  src={active?.src}
-                  alt={active?.alt || 'Astrology image'}
-                  className="main-img"
-                  loading="lazy"
-                  custom={direction}
-                  variants={variants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{
-                    x: { type: 'spring', stiffness: 300, damping: 30 },
-                    opacity: { duration: 0.2 },
-                  }}
-                  drag="x"
-                  dragConstraints={{ left: 0, right: 0 }}
-                  dragElastic={0.2}
-                  onDragEnd={(e, { offset, velocity }) => {
-                    const swipe = swipePower(offset.x, velocity.x);
-                    if (swipe < -swipeConfidenceThreshold) {
-                      paginate(1);
-                    } else if (swipe > swipeConfidenceThreshold) {
-                      paginate(-1);
-                    }
-                  }}
-                />
-              </AnimatePresence>
+  <motion.img
+    key={active?.src}
+    src={active?.src}
+    alt={active?.alt || 'Astrology image'}
+    className="main-img"
+    loading="lazy"
+    initial={{ x: direction > 0 ? 300 : -300 }}
+    animate={{ x: 0 }}
+    transition={{ duration: 0.5, ease: 'easeOut' }}
+    drag="x"
+    dragConstraints={{ left: 0, right: 0 }}
+    dragElastic={0.2}
+    onDragEnd={(e, { offset, velocity }) => {
+      const swipe = swipePower(offset.x, velocity.x);
+      if (swipe < -swipeConfidenceThreshold) {
+        paginate(1);
+      } else if (swipe > swipeConfidenceThreshold) {
+        paginate(-1);
+      }
+    }}
+  />
+
               {/* Optional arrows */}
               <div className="nav-arrows">
                 <button

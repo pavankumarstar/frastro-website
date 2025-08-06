@@ -10,6 +10,11 @@ const Banner = () => {
   const handleHomeClick = () => {
     navigate('/');
   };
+  
+  const handleBookClick = (e) => {
+    e.stopPropagation();
+    navigate('/contact');
+  };
 
   return (
     <motion.div
@@ -27,25 +32,28 @@ const Banner = () => {
         </div>
 
         {/* MIDDLE SECTION */}
-        <div className="banner-box middle-box">
+        {/* <div className="banner-box middle-box">
           <p className="no-label">No</p>
           <h2 className="number">1</h2>
           <div>
-            <h3 className="middle-title">ASTROLOGER IN CANADA</h3>
+            <h3 className="middle-title">ASTROLOGER IN  canada</h3>
             <p className="middle-desc"><em>BEST RESULTS</em></p>
           </div>
-        </div>
+        </div> */}
 
         {/* RIGHT SECTION */}
-        <a href="tel:+19542751438" className="banner-box right-box phone-link">
+        <a href="tel:647-471-3459" className="banner-box right-box phone-link">
           <div className="phone-icon">
             <FaPhoneAlt />
           </div>
           <div>
             <h3 className="right-title">GET CONSULTATION</h3>
-            <p className="phone-number">+1 954 275 1438</p>
+            <p className="phone-number">1-6474-713-459</p>
           </div>
         </a>
+        <button className="book-button" onClick={handleBookClick}>
+            BOOK APPOINTMENT
+          </button>
       </div>
     </motion.div>
   );

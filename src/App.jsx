@@ -24,7 +24,7 @@ import { useEffect } from 'react';
 import Tarot from './pages/services/TarotReading'
 import Business from './pages/services/Business';
 import FloatingButtons from './components/FloatingButtons';
-import SocialSidebar from './components/SocialSidebar';
+
 import ScrollToTop from './components/ScrollToTop';
 import Banner from './components/Banner';
 import AstroAlert from './components/AstroAlert';
@@ -41,8 +41,7 @@ function App() {
       <Banner/>
       <Header />
       <AstroAlert/>
-      
-      <SocialSidebar/>
+    
       <main className="min-h-screen bg-black text-white p-6">
         <Routes>
           <Route path="/" element={<Home />} />

@@ -31,7 +31,7 @@ const ContactForm = () => {
     const { name, sunSign, email, phone, message } = form;
     const waText = `Name: ${name}\nSun Sign: ${sunSign}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`;
     const encodedText = encodeURIComponent(waText);
-    const whatsappNumber = '917483969594';
+    const whatsappNumber = '16474713459';
     window.open(`https://wa.me/${whatsappNumber}?text=${encodedText}`, '_blank');
 
     // try {
@@ -141,7 +141,7 @@ const ContactForm = () => {
             <div className="contact-share">
               <div className="info-line">
                 <span className="icon">📍</span>
-                <span>Star Street, Washington DC, USA</span>
+                <span>7A-7086 Airport road Mississauga L4T-2G8 ON Canada</span>
               </div>
               <div className="info-line">
                 <span className="icon">✉️</span>
@@ -149,11 +149,11 @@ const ContactForm = () => {
               </div>
               <div className="info-line">
                 <span className="icon">📞</span>
-                <span>+23 344 53 4556</span>
+                <span>+1-6474-713-459</span>
               </div>
               <div className="info-line">
                 <span className="icon">📱</span>
-                <span>+23 67 537 4556</span>
+                <span>1-6474-713-459</span>
               </div>
             </div>
           </div>

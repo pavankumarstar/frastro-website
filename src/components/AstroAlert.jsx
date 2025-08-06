@@ -21,7 +21,7 @@ const AstroAlert = () => {
   };
 
   const handleBook = () => {
-    const phoneNumber = '91XXXXXXXXXX'; // Replace with your WhatsApp number
+    const phoneNumber = '647-471-3459'; // Replace with your WhatsApp number
     const message = encodeURIComponent("Hello! I would like to book an appointment.");
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
     window.open(whatsappURL, '_blank');

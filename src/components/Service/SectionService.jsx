@@ -1,42 +1,51 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
 import './SectionService.css';
+import { useNavigate } from 'react-router-dom';
 
-const SectionService = ({ buttonLabels = [], paragraph1, imageSrc, paragraph2, paragraph3 }) => {
-    return (
-        <div className='section-wrapper'>
-            <div className='section-head'>
-                {buttonLabels.map((label, index) => (
-                    <button key={index}>{label}</button>
-                ))}
-            </div>
+const SectionService = ({ buttonLabels, contentData }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+   const navigate = useNavigate();
+  const { paragraph1,header, imageSrc, paragraph2, paragraph3 } = contentData[activeIndex];
 
-            <motion.div
-                className='section-line'
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
-            >
-                <h1 className='section-highlight'>DOES EACH LINE CARRY ITS OWN MEANING?</h1>
+  const handleAppointmentClick = () => {
+    navigate('/contact');
+  };
 
-                {/* First paragraph full width */}
-                <div className='section-pass'>
-                    <p className='p-1'>{paragraph1}</p>
-                </div>
+  return (
+    <div className="section-service">
+      <div className="tab-buttons">
+        {buttonLabels.map((label, index) => (
+          <button
+            key={index}
+            className={activeIndex === index ? 'active' : ''}
+            onClick={() => setActiveIndex(index)}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
 
-                {/* 40-60 Image + Text layout */}
-                <div className='section-bottom'>
-                    <div className='section-img'>
-                        <img src={imageSrc} alt='Palm Reading' />
-                    </div>
-                    <div className='section-text'>
-                        <p className='p-2'>{paragraph2}</p>
-                        <p className='p-3'>{paragraph3}</p>
-                    </div>
-                </div>
-            </motion.div>
+      <div className="section-content">
+        <h2>{header}</h2>
+        <p>{paragraph1}</p>
+        <div className="section-row">
+          <div className="section-image">
+            <img src={imageSrc} alt="Palm Reading Visual" />
+          </div>
+          <div className="section-text">
+            <p>{paragraph2}</p>
+            <p>{paragraph3}</p>
+          </div>
         </div>
-    );
+
+        <div className="appointment-button-container">
+          <button className="appointment-button" onClick={handleAppointmentClick}>
+            Book Appointment
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default SectionService;
