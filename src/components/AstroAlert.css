@@ -13,7 +13,7 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* FULL center */
   background: #fff7e6;
   color: #3a2f0b;
   padding: 24px 20px;
@@ -24,8 +24,9 @@
   z-index: 1000;
   font-family: 'Georgia', serif;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  animation: bounceIn 0.6s ease-out;
+ 
 }
+
 
 /* Glow effect */
 .astro-alert::before {

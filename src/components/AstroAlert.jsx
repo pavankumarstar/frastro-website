@@ -40,10 +40,10 @@ const AstroAlert = () => {
 
           <motion.div
             className="astro-alert"
-            initial={{ scale: 0.7, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.7, opacity: 0 }}
-            transition={{ duration: 0.5 }}
+           initial={{ scale: 0.7, opacity: 0, x: '-50%', y: '-50%' }}
+  animate={{ scale: 1, opacity: 1, x: '-50%', y: '-50%' }}
+  exit={{ scale: 0.7, opacity: 0, x: '-50%', y: '-50%' }}
+  transition={{ duration: 0.6 }}
           >
             <button className="close-btn" onClick={handleClose}>
               &times;
