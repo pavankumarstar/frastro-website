@@ -6,22 +6,22 @@
   font-family: 'Georgia', serif;
   background-image: url('/public/images/timer_bg.jpg'); /* replace with your path */
   background-size: cover;
-  background-attachment: fixed; /* for parallax effect */
+  background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
   overflow: hidden;
 }
 
-/* Dark overlay over background image */
+/* Dark overlay */
 .stats-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6); /* Adjust darkness */
+  background: rgba(0, 0, 0, 0.6);
   z-index: 0;
 }
 
-/* Ensure content stays above overlay */
+/* Ensure content is on top */
 .stats-section > * {
   position: relative;
   z-index: 1;
@@ -43,13 +43,29 @@
   line-height: 1.5;
 }
 
+/* Scroll wrapper for mobile */
+.stats-scroll-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+
+.stats-scroll-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.stats-scroll-wrapper {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .stats-container {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
-  justify-content: space-around;
   gap: 40px;
 }
 
+/* Cards */
 .stat-card {
   width: 220px;
   display: flex;
@@ -77,4 +93,17 @@
 .stat-label {
   font-size: 18px;
   font-weight: bold;
+}
+
+/* Horizontal scroll on mobile only */
+@media (max-width: 768px) {
+  .stats-container {
+    flex-wrap: nowrap;
+    width: max-content;
+  }
+
+  .stat-card {
+    min-width: 240px;
+    flex: 0 0 auto;
+  }
 }

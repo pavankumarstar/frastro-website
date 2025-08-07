@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Faq from '../components/Faq';
 import ClientTestimonials from '../components/ClientTestimonials';
 import StatsSection from '../components/about/StatsSection';
+import OurServices from '../components/about/OurServices';
 const zodiacItems = [
   { label: 'Pisces', symbol: '♓' },
   { label: 'Virgo', symbol: '♍' },
@@ -145,6 +146,7 @@ const About = () => {
     </div>
     <div>
       {/* <Map/> */}
+      <OurServices/>
       <Faq/>
       <StatsSection/>
       <ClientTestimonials/>

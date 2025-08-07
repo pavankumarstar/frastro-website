@@ -5,16 +5,16 @@ import "./Cards.css";
 import { Link } from "react-router-dom";
 
 const items = [
-  { title: "Love Marriage", img: "/images/cards/love-marriage.jpg", link: "/services/love-marriage" },
-  { title: "Love Problem", img: "/images/cards/love-problem.jpg", link: "/services/love-problem" },
-  { title: "Black Magic Removal", img: "/images/cards/black-magic.jpg", link: "/services/black-magic" },
-  { title: "Black Eye", img: "/images/cards/black-eye.jpg", link: "/services/evil-eye" },
-  { title: "Business Problem", img: "/images/cards/business-problem.jpg", link: "/services/business-problems" },
-  { title: "Family Problem", img: "/images/cards/family-problem.jpg", link: "/services/family-problems" },
-  { title: "Negative Energy", img: "/images/cards/negative.jpg", link: "/services/negative-energy" },
-  { title: "Palm Reading", img: "/images/cards/plamreading.jpg", link: "/services/palm-reading" },
-  { title: "Tarot Reading", img: "/images/cards/Tarot-reading.jpg", link: "/services/tarot-reading" },
-  { title: "Health Problem", img: "/images/healthproblem.jpg", link: "/services/health-problem" },
+  { title: "Love Marriage", img: "/images/cards/love-marriage.jpg", link: "/services/love-marriage" , desc: 'Expert guidance on love marriage and relationship alignment.' },
+  { title: "Love Problem", img: "/images/cards/love-problem.jpg", link: "/services/love-problem", desc: 'Resolve misunderstandings and restore harmony in love life.' },
+  { title: "Black Magic Removal", img: "/images/cards/black-magic.jpg", link: "/services/black-magic" , desc: 'Expert guidance on black magic removal.' },
+  { title: "Black Eye", img: "/images/cards/black-eye.jpg", link: "/services/evil-eye" , desc: 'Expert guidance on evil eye removal.' },
+  { title: "Business Problem", img: "/images/cards/business-problem.jpg", link: "/services/business-problems", desc: 'Expert guidance on business problems.' },
+  { title: "Family Problem", img: "/images/cards/family-problem.jpg", link: "/services/family-problems" , desc: 'Expert guidance on family problems.' },
+  { title: "Negative Energy", img: "/images/cards/negative.jpg", link: "/services/negative-energy", desc: 'Expert guidance on negative energy.' },
+  { title: "Palm Reading", img: "/images/cards/plamreading.jpg", link: "/services/palm-reading", desc: 'Expert guidance on palm reading.' },
+  { title: "Tarot Reading", img: "/images/cards/Tarot-reading.jpg", link: "/services/tarot-reading", desc: 'Expert guidance on tarot reading.' },
+  { title: "Health Problem", img: "/images/healthproblem.jpg", link: "/services/health-problem" , desc: 'Expert guidance on health problems.' },
 ];
 
 const Cards = () => {
@@ -68,6 +68,7 @@ const Cards = () => {
               <div className="card-overlay">
                 <div className="overlay-content">
                   <h2>{item.title}</h2>
+                  <p>{item.desc}</p>
                   <Link to={item.link} className="learn-btn">
                     Learn More →
                   </Link>

@@ -48,6 +48,15 @@ const poojaData = [
     image:
       "https://i.pinimg.com/736x/1e/ce/b6/1eceb6e7789284d8300ce8745ce6ef68.jpg",
   },
+  {
+    title: "Lakshmi Maa Pooja",
+    duration: "2.5 Hours",
+    description:
+      "Psychic performs sacred rituals to invoke Goddess Lakshmi for wealth, abundance, financial growth, and harmony in both personal and professional life.",
+    tags: ["Wealth", "Abundance", "Harmony"],
+    image:
+      "https://i.pinimg.com/736x/53/53/97/535397a179032a635f42a451aab0fc1f.jpg",
+  },
 ];
 
 const SacredPooja = () => {

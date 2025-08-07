@@ -12,7 +12,6 @@ import {
 
 const Footer = () => {
   const [theme, setTheme] = useState('dark');
-  const [visible, setVisible] = useState(false);
 
   // Load persisted theme
   useEffect(() => {
@@ -21,7 +20,6 @@ const Footer = () => {
       setTheme(stored);
       document.documentElement.setAttribute('data-theme', stored);
     } else {
-      // default to dark
       document.documentElement.setAttribute('data-theme', 'dark');
     }
   }, []);
@@ -34,29 +32,8 @@ const Footer = () => {
     localStorage.setItem('site-theme', next);
   };
 
-  // Reveal on near scroll bottom
-  useEffect(() => {
-    const onScroll = () => {
-      const scrolledFromBottom =
-        document.documentElement.scrollHeight -
-        window.innerHeight -
-        window.scrollY;
-      if (scrolledFromBottom < 200) {
-        setVisible(true);
-      } else {
-        setVisible(false);
-      }
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
   return (
-    <footer
-      className={`footer-section ${visible ? 'revealed' : ''}`}
-      aria-label="Site Footer"
-    >
+    <footer className="footer-section" aria-label="Site Footer">
       <div className="footer-top-row">
         <div className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
           {theme === 'dark' ? <FaSun /> : <FaMoon />}
@@ -78,28 +55,24 @@ const Footer = () => {
         <div className="footer-column">
           <h3>Services</h3>
           <ul>
-            <li>
-              <a href="/love-marriage">Love Marriage</a>
-            </li>
-            <li>
-              <a href="/love-problem">Love Problem</a>
-            </li>
-            <li>
-              <a href="/palm-reading">Palm Reading</a>
-            </li>
+            <li><a href="/love-marriage">Love Marriage</a></li>
+            <li><a href="/love-problem">Black Magic</a></li>
+            <li><a href="/palm-reading">Love Problem</a></li>
+            <li><a href="/palm-reading">Family Problem</a></li>
+            <li><a href="/palm-reading">Negative Energy</a></li>
+            <li><a href="/palm-reading">Business Problem</a></li>
+            <li><a href="/palm-reading">Evil Eye</a></li>
+            <li><a href="/palm-reading">Health Probelm</a></li>
+            <li><a href="/palm-reading">Palm Reading</a></li>
+            <li><a href="/palm-reading">Tarot Reading</a></li>
           </ul>
         </div>
 
         <div className="footer-column">
           <h3>Contact</h3>
           <ul className="contact-list">
-            <li>
-              📞 <a href="tel:16474713459">16474713459</a>
-            </li>
-            <li>
-              ✉️ <a href="mailto:astro@example.com">astro@example.com</a>
-            </li>
-            <li>📍 Delhi, India</li>
+            <li>📞 <a href="tel:16474713459">16474713459</a></li>
+            <li>📍 7A-7086 Airport road Mississauga L4T-2G8 ON Canada</li>
             <li>
               <a
                 href="https://wa.me/16474713459"
@@ -117,18 +90,10 @@ const Footer = () => {
         <div className="footer-column social-column">
           <h3>Follow</h3>
           <div className="social-row">
-            <a aria-label="Instagram" href="#" className="social-icon">
-              <FaInstagram />
-            </a>
-            <a aria-label="Facebook" href="#" className="social-icon">
-              <FaFacebookF />
-            </a>
-            <a aria-label="YouTube" href="#" className="social-icon">
-              <FaYoutube />
-            </a>
-            <a aria-label="Twitter" href="#" className="social-icon">
-              <FaTwitter />
-            </a>
+            <a aria-label="Instagram" href="#" className="social-icon"><FaInstagram /></a>
+            <a aria-label="Facebook" href="#" className="social-icon"><FaFacebookF /></a>
+            <a aria-label="YouTube" href="#" className="social-icon"><FaYoutube /></a>
+            <a aria-label="Twitter" href="#" className="social-icon"><FaTwitter /></a>
           </div>
         </div>
       </div>

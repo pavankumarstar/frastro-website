@@ -9,7 +9,7 @@
   margin-top: 30px;
   color: #1f273d;
 }
-
+ 
 .contact-title .highlight {
   color: #ff6600;
 }
@@ -38,7 +38,11 @@
   z-index: 2;
   position: relative;
 }
-
+input::placeholder,
+textarea::placeholder {
+  color: #999; /* or any darker color like #333 for better contrast */
+  opacity: 1;  /* Ensures it's not semi-transparent */
+}
 .input-row {
   display: flex;
   gap: 20px;

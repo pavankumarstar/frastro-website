@@ -51,7 +51,7 @@ const Header = () => {
     <header className="header">
       <div className="header-container">
         <NavLink to="/" className="logo" onClick={() => setMenuOpen(false)}>
-          Astrology
+          <img src="/images/logo.png" alt="" />
         </NavLink>
 
         <nav className={`nav-links ${menuOpen ? 'open' : ''}`} ref={navRef}>

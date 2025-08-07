@@ -32,18 +32,19 @@ const StatsSection = () => {
         Now <span>We Have</span>
       </h2>
       <p className="stats-subheading">
-        There are many variations of passages of Lorem Ipsum available,
-        but the majority have suffered alteration in some form, by injected hummer.
+        Astrology is used for birth chart analysis, prediction, and gaining insights into personality, relationships, and life events. 
       </p>
 
-      <div className="stats-container">
-        {stats.map((item, index) => (
-          <div key={index} className="stat-card">
-            <div className="stat-icon">{item.icon}</div>
-            <h3 className="stat-number">{item.number}</h3>
-            <p className="stat-label">{item.label}</p>
-          </div>
-        ))}
+      <div className="stats-scroll-wrapper">
+        <div className="stats-container">
+          {stats.map((item, index) => (
+            <div key={index} className="stat-card">
+              <div className="stat-icon">{item.icon}</div>
+              <h3 className="stat-number">{item.number}</h3>
+              <p className="stat-label">{item.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

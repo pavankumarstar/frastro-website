@@ -13,6 +13,7 @@ import SacredPooja from '../components/SacredPooja';
 import AstrologerSection from '../components/Home/AstrologerSection';
 import Faq from '../components/Faq';
 import Carousell from '../components/Home/Carousell';
+import AstroSection from '../components/Home/AstroSection';
 
 const Home = () => {
    const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -51,7 +52,8 @@ As opposed to using 'Content here, content here', making it look likesdesdee rea
           /> */}
           
         </motion.div>
-          <AstrologerSection/>
+          {/* <AstrologerSection/> */}
+          <AstroSection/>
           <Cards/>
           <Faq/>
           <SacredPooja/>

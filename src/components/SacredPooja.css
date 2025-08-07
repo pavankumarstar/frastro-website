@@ -42,9 +42,23 @@ h2 span {
   color: white;
 }
 .card {
-  background-color: #1a1a1a; /* Dark background */
+  /* background-color: #1a1a1a; Dark background */
   border: none;
 }
 .text-muted {
   color: #ccc !important;
+}
+@media screen and (min-width: 768px) {
+  .horizontal-scroll-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    grid-template-rows: repeat(2, auto);   /* 2 rows */
+    gap: 1.5rem;
+    overflow: visible;
+  }
+
+  .scroll-card {
+    width: 100%;
+    min-width: unset;
+  }
 }

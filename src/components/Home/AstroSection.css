@@ -1,0 +1,171 @@
+.astro-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background-color: #12002f;
+  color: #fff;
+  gap: 50px;
+  flex-wrap: wrap-reverse;
+}
+
+.astro-left {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.astro-left h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.astro-left p {
+  margin: 20px 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #bdbddd;
+}
+
+.astro-left ul {
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.astro-left li {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.astro-left button {
+  background: #8225e4;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.astro-left button:hover {
+  background: #6619c1;
+}
+
+.astro-right {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.astro-image {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 600px;
+  object-fit: cover; /* or use 'contain' if you want full image always visible */
+  display: block;
+  position: relative;
+  z-index: 1;
+  border-top-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Responsive image container */
+@media (max-width: 768px) {
+  .astro-right {
+    width: 100%;
+  }
+
+  .astro-image {
+    max-height: none;
+    height: auto;
+  }
+}
+
+
+/* Top-right floating planet */
+.planet-float {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 60px;
+  height: 60px;
+  z-index: 2;
+}
+
+.planet-float img {
+  width: 100%;
+  height: auto;
+}
+
+.top-right-swirl {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 0 25px #a855f7);
+}
+
+.top-right-swirl img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0.8;
+}
+
+
+/* Bottom-left animated circle */
+.circle-animate {
+  position: absolute;
+  bottom: -40px;
+  left: -40px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #a855f7 0%, #ffffff00 70%);
+  z-index: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .astro-wrapper {
+    flex-direction: column;
+    padding: 40px 24px 40px 24px; /* Increased side padding */
+  }
+
+  .astro-left,
+  .astro-right {
+    padding-right: 10px; /* Add space on the right */
+  }
+
+  .astro-left h1 {
+    font-size: 2rem;
+  }
+
+  .astro-left p,
+  .astro-left li {
+    font-size: 0.95rem;
+  }
+
+  .planet-float {
+    top: -20px;
+    right: -20px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .circle-animate {
+    width: 60px;
+    height: 60px;
+    bottom: -30px;
+    left: -30px;
+  }
+}
+
