@@ -1,8 +1,6 @@
 import React from 'react';
 import './Home.css';
-import zodiac from '../assets/images/love-black.jpg';
-import palm from '../assets/images/palm-reading.jpg';
-import cosmic from '../assets/images/spiritual-healing.jpg';
+
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 // import { HoverEffect } from '../components/Hover';
 import ClientTestimonials from '../components/ClientTestimonials';

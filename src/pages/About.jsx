@@ -2,7 +2,6 @@ import React from 'react';
 import './About.css';
 import { FaTwitter, FaFacebookF, FaYoutube, FaInstagram } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import Map from '../components/Map';
 import Faq from '../components/Faq';
 import ClientTestimonials from '../components/ClientTestimonials';
 import StatsSection from '../components/about/StatsSection';
@@ -36,7 +35,7 @@ const About = () => {
     <div className="">
       <div className="contact-header">
         <img
-          src="/images/about/slider1.jpg"
+          src="/images/about/one.jpeg"
           alt="Decorative header for about"
           className="header-image"
           aria-hidden="true"
