@@ -3,7 +3,6 @@ import './Home.css';
 import zodiac from '../assets/images/love-black.jpg';
 import palm from '../assets/images/palm-reading.jpg';
 import cosmic from '../assets/images/spiritual-healing.jpg';
-import Carousel from '../components/Carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 // import { HoverEffect } from '../components/Hover';
 import ClientTestimonials from '../components/ClientTestimonials';
@@ -15,18 +14,16 @@ import { useMediaQuery } from 'react-responsive';
 import SacredPooja from '../components/SacredPooja';
 import AstrologerSection from '../components/Home/AstrologerSection';
 import Faq from '../components/Faq';
+import Carousell from '../components/Home/Carousell';
 
 const Home = () => {
    const isMobile = useMediaQuery({ maxWidth: 768 });
   return (
     <div className="home">
        
-        <Carousel
-          images={[zodiac, palm, cosmic]}
-          autoplay={true}
-          direction="up"
-        >
-        </Carousel> 
+        
+        <Carousell/>
+        
         {/* <div className='about-marquee'>
                         <ThreeDMarquee
                   images={[

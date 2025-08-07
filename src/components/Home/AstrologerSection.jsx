@@ -42,7 +42,7 @@ const AstrologerSection = () => {
 
         <div className="experience">
           <span className="circle">25</span>
-          <span>Years Experience</span>
+          <span className="pavan">Years Experience</span>
         </div>
 
        <div className="buttons">
