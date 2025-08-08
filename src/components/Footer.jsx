@@ -1,47 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './Footer.css';
 import {
   FaInstagram,
   FaYoutube,
   FaFacebookF,
   FaTwitter,
-  FaWhatsapp,
-  FaSun,
-  FaMoon,
+  FaWhatsapp
 } from 'react-icons/fa';
 
 const Footer = () => {
-  const [theme, setTheme] = useState('dark');
-
-  // Load persisted theme
-  useEffect(() => {
-    const stored = localStorage.getItem('site-theme');
-    if (stored === 'light' || stored === 'dark') {
-      setTheme(stored);
-      document.documentElement.setAttribute('data-theme', stored);
-    } else {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
-  }, []);
-
-  // Toggle theme and persist
-  const toggleTheme = () => {
-    const next = theme === 'dark' ? 'light' : 'dark';
-    setTheme(next);
-    document.documentElement.setAttribute('data-theme', next);
-    localStorage.setItem('site-theme', next);
-  };
-
   return (
     <footer className="footer-section" aria-label="Site Footer">
-      <div className="footer-top-row">
-        <div className="theme-toggle" onClick={toggleTheme} aria-label="Toggle theme">
-          {theme === 'dark' ? <FaSun /> : <FaMoon />}
-          <span className="toggle-label">
-            {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-          </span>
-        </div>
-      </div>
+      {/* Removed footer-top-row and theme toggle */}
 
       <div className="footer-inner">
         <div className="footer-column">
@@ -90,10 +60,11 @@ const Footer = () => {
         <div className="footer-column social-column">
           <h3>Follow</h3>
           <div className="social-row">
-            <a aria-label="Instagram" href="#" className="social-icon"><FaInstagram /></a>
-            <a aria-label="Facebook" href="#" className="social-icon"><FaFacebookF /></a>
-            <a aria-label="YouTube" href="#" className="social-icon"><FaYoutube /></a>
-            <a aria-label="Twitter" href="#" className="social-icon"><FaTwitter /></a>
+            <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-icon"><FaInstagram /></a>
+<a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-icon"><FaFacebookF /></a>
+<a href="https://youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="social-icon"><FaYoutube /></a>
+<a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-icon"><FaTwitter /></a>
+
           </div>
         </div>
       </div>
