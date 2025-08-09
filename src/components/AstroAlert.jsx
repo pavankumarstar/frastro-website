@@ -20,12 +20,10 @@ const AstroAlert = () => {
     navigate('/');
   };
 
-  const handleBook = () => {
-    const phoneNumber = '647-471-3459'; // Replace with your WhatsApp number
-    const message = encodeURIComponent("Hello! I would like to book an appointment.");
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${message}`;
-    window.open(whatsappURL, '_blank');
-  };
+ const handleBook = () => {
+  navigate('/contact'); // Navigate to the contact page
+};
+
 
   return (
     <AnimatePresence>
@@ -50,7 +48,7 @@ const AstroAlert = () => {
             </button>
 
             <h2>AstroAlert</h2>
-            <p>🌟 Divine Assistance in Chandan – Available in All Regions 🌍</p>
+            <p>🌟 Divine Assistance in Canada – Available in All Regions 🌍</p>
             <div className="alert-buttons">
               <button className="book-btn" onClick={handleBook}>
                 Book Appointment

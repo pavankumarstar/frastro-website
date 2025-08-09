@@ -1,9 +1,7 @@
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
@@ -18,33 +16,36 @@ import BlackMagic from './pages/services/BlackMagic';
 import HealthProblem from './pages/services/HealthProblem';
 import FamilyProblems from './pages/services/FamilyProblems';
 import Negativeenergy from './pages/services/Negativeenergy';
+import Tarot from './pages/services/TarotReading';
+import Business from './pages/services/Business';
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
-import Tarot from './pages/services/TarotReading'
-import Business from './pages/services/Business';
-import FloatingButtons from './components/FloatingButtons';
+import { useEffect, useState } from 'react';
 
+import FloatingButtons from './components/FloatingButtons';
 import ScrollToTop from './components/ScrollToTop';
 import Banner from './components/Banner';
 import AstroAlert from './components/AstroAlert';
 
-
 function App() {
+  const [showAlert, setShowAlert] = useState(true);
+
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
 
   return (
     <Router>
-      <ScrollToTop/>
-      <Banner/>
-      <Header />
-      <AstroAlert/>
-    
+      <ScrollToTop />
+      <Banner />
+
+      {/* Show AstroAlert only if true */}
+      {showAlert && <AstroAlert onClose={() => setShowAlert(false)} />}
+
       <main className="min-h-screen bg-black text-white p-6">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home showHeader={true} />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/location" element={<Location />} />
@@ -57,14 +58,13 @@ function App() {
           <Route path="/services/black-magic" element={<BlackMagic />} />
           <Route path="/services/health-problem" element={<HealthProblem />} />
           <Route path="/services/family-problems" element={<FamilyProblems />} />
-         <Route path="/services/negative-energy" element={<Negativeenergy />} />
-
+          <Route path="/services/negative-energy" element={<Negativeenergy />} />
           <Route path="/services/business-problems" element={<Business />} />
           <Route path="/services/tarot-reading" element={<Tarot />} />
-
         </Routes>
       </main>
-      <FloatingButtons/>
+
+      <FloatingButtons />
       <Footer />
     </Router>
   );

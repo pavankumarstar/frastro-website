@@ -1,8 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./AstroSection.css";
+import { useNavigate } from "react-router-dom";
 
 const AstroSection = () => {
+  const navigate = useNavigate();
+
+    const handleReadMore = () => {
+    navigate("/about"); // Navigates to About page
+  };
+
   return (
     <div className="astro-wrapper">
       <div className="astro-left">
@@ -20,7 +27,7 @@ Whether you're trapped by negative energies, mysterious setbacks, or seeking cla
           <li>🌞 It is not in the stars to hold our destiny but in ourselves.</li>
           <li>🌞 Astrology is like a gateway drug to a more cosmic world view.</li>
         </ul>
-        <button>Read More</button>
+        <button onClick={handleReadMore}>Read More</button>
       </div>
 
       <div className="astro-right">

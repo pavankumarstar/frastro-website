@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Contact.css';
 import { motion } from 'framer-motion';
+import ContactInfo from '../components/ContactInfo';
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -46,37 +47,7 @@ const Contact = () => {
 
   return (
      <div>
-      <div className="contact-header">
-  <img
-    src="/images/about/slider1.jpg"
-    alt="Decorative header"
-    className="header-image"
-    aria-hidden="true"
-  />
-
-  <motion.h1
-    className="headline"
-    initial="hidden"
-    animate="visible"
-    variants={{
-      hidden: { opacity: 0, y: 30 },
-      visible: {
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.9, ease: 'easeOut' },
-      },
-    }}
-  >
-    Contact Us
-    <motion.span
-      aria-hidden="true"
-      style={{ display: 'block', height: 4, marginTop: 8, borderRadius: 2, background: '#ff8f1c' }}
-      initial={{ scaleX: 0 }}
-      animate={{ scaleX: 1 }}
-      transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
-    />
-  </motion.h1>
-</div>
+      
     <div className="contact-container">
       <motion.h2
         className="contact-title"
@@ -173,6 +144,7 @@ const Contact = () => {
         ></iframe>
       </div>
     </div>
+    <ContactInfo/>
      </div>
   );
 };

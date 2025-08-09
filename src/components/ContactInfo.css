@@ -1,0 +1,43 @@
+.contact-info-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 40px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.info-box {
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  background-color: #1e5ad7;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-size: 22px;
+}
+
+.info-box p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.info-box a {
+  color: #1e5ad7;
+  text-decoration: none;
+}
+
+.info-box a:hover {
+  text-decoration: underline;
+}

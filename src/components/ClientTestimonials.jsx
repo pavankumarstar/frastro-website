@@ -6,7 +6,7 @@ import Avatar from 'react-avatar';
 const ClientTestimonials = () => {
   const testimonials = [
     {
-    text: "Master Shiva reading revealed career opportunities I never would have considered. Within months, I found my true calling.",
+    text: "Master Raj reading revealed career opportunities I never would have considered. Within months, I found my true calling.",
     author: "Sarah Johnson",
     position: "Canada, Toronto",
     image: "https://randomuser.me/api/portraits/women/44.jpg", // ✅ sample avatar
@@ -20,28 +20,28 @@ const ClientTestimonials = () => {
     delay: "0.2s"
     },
     {
-      text: "Master Shiva prediction about my financial situation came true to the month. The remedies he suggested made all the difference.",
+      text: "Master Raj prediction about my financial situation came true to the month. The remedies he suggested made all the difference.",
       author: "Emily Rodriguez",
       position: "Canada , Calgary",
       image: "https://randomuser.me/api/portraits/women/27.jpg",
       delay: "0.4s"
     },
     {
-      text: "Master Shiva black magic removal changed my life. I was facing unexplained problems for months, but after his powerful remedies, everything began to clear up—just as he predicted. His guidance brought peace and protection back into my life.",
+      text: "Master Raj black magic removal changed my life. I was facing unexplained problems for months, but after his powerful remedies, everything began to clear up—just as he predicted. His guidance brought peace and protection back into my life.",
       author: "David Thompson",
       position: "Canada , Vancouver",
       image: "https://randomuser.me/api/portraits/men/23.jpg",
       delay: "0.6s"
     },
     {
-      text: "I had almost given up hope of getting married due to constant delays and family obstacles. Master Shiva guidance and astrological remedies worked wonders—within months, everything aligned, and my marriage was fixed smoothly.",
+      text: "I had almost given up hope of getting married due to constant delays and family obstacles. Master Raj guidance and astrological remedies worked wonders—within months, everything aligned, and my marriage was fixed smoothly.",
       author: "Lisa Park",
       position: "Canada , Edmonton",
       image: "https://randomuser.me/api/portraits/women/12.jpg",
       delay: "0.8s"
     },
     {
-      text: "Master Shiva spiritual healing brought me inner peace during the darkest phase of my life. His sessions helped me reconnect with my energy, clear negativity, and feel truly balanced for the first time in years.",
+      text: "Master Raj spiritual healing brought me inner peace during the darkest phase of my life. His sessions helped me reconnect with my energy, clear negativity, and feel truly balanced for the first time in years.",
       author: "James Wilson",
       position: "Canada ,  Winnipeg",
       image: "https://randomuser.me/api/portraits/men/11.jpg",

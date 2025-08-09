@@ -7,6 +7,8 @@ import {
   FaTwitter,
   FaWhatsapp
 } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
+
 
 const Footer = () => {
   return (
@@ -17,7 +19,7 @@ const Footer = () => {
         <div className="footer-column">
           <h3>About Us</h3>
           <p>
-            Astrology expert offering love marriage, love problem, and palm reading services with
+            Master Raj offering love marriage, love problem, and palm reading services with
             trusted guidance grounded in Vedic wisdom.
           </p>
         </div>
@@ -25,17 +27,18 @@ const Footer = () => {
         <div className="footer-column">
           <h3>Services</h3>
           <ul>
-            <li><a href="/love-marriage">Love Marriage</a></li>
-            <li><a href="/love-problem">Black Magic</a></li>
-            <li><a href="/palm-reading">Love Problem</a></li>
-            <li><a href="/palm-reading">Family Problem</a></li>
-            <li><a href="/palm-reading">Negative Energy</a></li>
-            <li><a href="/palm-reading">Business Problem</a></li>
-            <li><a href="/palm-reading">Evil Eye</a></li>
-            <li><a href="/palm-reading">Health Probelm</a></li>
-            <li><a href="/palm-reading">Palm Reading</a></li>
-            <li><a href="/palm-reading">Tarot Reading</a></li>
-          </ul>
+  <li><NavLink to="/services/love-marriage">Love Marriage</NavLink></li>
+  <li><NavLink to="/services/black-magic">Black Magic</NavLink></li>
+  <li><NavLink to="/services/love-problem">Love Problem</NavLink></li>
+  <li><NavLink to="/services/family-problems">Family Problem</NavLink></li>
+  <li><NavLink to="/services/negative-energy">Negative Energy</NavLink></li>
+  <li><NavLink to="/services/business-problems">Business Problem</NavLink></li>
+  <li><NavLink to="/services/evil-eye">Evil Eye</NavLink></li>
+  <li><NavLink to="/services/health-problem">Health Problem</NavLink></li>
+  <li><NavLink to="/services/palm-reading">Palm Reading</NavLink></li>
+  <li><NavLink to="/services/tarot-reading">Tarot Reading</NavLink></li>
+</ul>
+
         </div>
 
         <div className="footer-column">
@@ -43,17 +46,6 @@ const Footer = () => {
           <ul className="contact-list">
             <li>📞 <a href="tel:16474713459">16474713459</a></li>
             <li>📍 7A-7086 Airport road Mississauga L4T-2G8 ON Canada</li>
-            <li>
-              <a
-                href="https://wa.me/16474713459"
-                aria-label="Chat on WhatsApp"
-                className="whatsapp-link"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaWhatsapp /> WhatsApp
-              </a>
-            </li>
           </ul>
         </div>
 

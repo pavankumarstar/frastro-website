@@ -183,9 +183,28 @@ flex: 0 0 calc(100% / 3 - 1rem); /* 3 cards visible */
     border-radius: 12px;
   }
 
-  .card-media {
-    padding-top: 100%; /* more square on mobile to save vertical space */
+    .card-media {
+    position: relative;
+    padding-top: 100%; /* perfect square for mobile */
+    border-radius: 12px; /* softer edges */
+    overflow: hidden;
   }
+
+  .card-media img {
+    border-radius: inherit;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit; /* match the image */
+    background: rgba(202, 118, 29, 0.65);
+   
+  }
+
 
   .learn-btn {
     padding: 6px 14px;
@@ -260,10 +279,6 @@ flex: 0 0 calc(100% / 3 - 1rem); /* 3 cards visible */
     flex: 0 0 100%; /* 1 card per view on mobile */
     min-width: 90vw;
     border-radius: 12px;
-  }
-
-  .card-media {
-    padding-top: 120%;
   }
 
   .learn-btn {

@@ -31,15 +31,7 @@ const Banner = () => {
           <p className="banner-desc">RESULT CUSTOMER SATISFACTION</p>
         </div>
 
-        {/* MIDDLE SECTION */}
-        {/* <div className="banner-box middle-box">
-          <p className="no-label">No</p>
-          <h2 className="number">1</h2>
-          <div>
-            <h3 className="middle-title">ASTROLOGER IN  canada</h3>
-            <p className="middle-desc"><em>BEST RESULTS</em></p>
-          </div>
-        </div> */}
+       
 
         {/* RIGHT SECTION */}
         <a href="tel:647-471-3459" className="banner-box right-box phone-link">

@@ -30,7 +30,7 @@ const itemVariants = {
   visible: { opacity: 1, x: 0, transition: { ease: 'easeOut' } },
 };
 
-const Header = () => {
+const Header = ({ highlight }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -50,13 +50,13 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-container">
-        <NavLink to="/" className="logo" onClick={() => setMenuOpen(false)}>
+        <NavLink to="/" className="logo" onClick={() => setMenuOpen(false)} >
           <img src="/images/logo.png" alt="" />
         </NavLink>
 
         <nav className={`nav-links ${menuOpen ? 'open' : ''}`} ref={navRef}>
-          <NavLink to="/" onClick={() => setMenuOpen(false)}>Home</NavLink>
-          <NavLink to="/about" onClick={() => setMenuOpen(false)}>About Us</NavLink>
+          <NavLink to="/" onClick={() => setMenuOpen(false)} className={highlight === "home" ? "nav-highlight" : ""}>Home</NavLink>
+          <NavLink to="/about" onClick={() => setMenuOpen(false) } className={highlight === "about" ? "nav-highlight" : ""}>About Us</NavLink>
 
           <div
             className="dropdown"
@@ -137,7 +137,7 @@ const Header = () => {
           </div>
 
           {/* <NavLink to="/location" onClick={() => setMenuOpen(false)}>Location</NavLink> */}
-          <NavLink to="/contact" onClick={() => setMenuOpen(false)}>Contact</NavLink>
+          <NavLink to="/contact" onClick={() => setMenuOpen(false)}  className={highlight === "contact" ? "nav-highlight" : ""}>Contact</NavLink>
         </nav>
 
         <div className="hamburger" onClick={() => setMenuOpen((o) => !o)}>

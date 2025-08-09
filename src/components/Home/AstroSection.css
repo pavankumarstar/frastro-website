@@ -78,6 +78,7 @@
 @media (max-width: 768px) {
   .astro-right {
     width: 100%;
+    overflow: hidden;  
   }
 
   .astro-image {
