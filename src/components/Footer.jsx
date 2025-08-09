@@ -11,7 +11,7 @@ import {
 const Footer = () => {
   return (
     <footer className="footer-section" aria-label="Site Footer">
-      {/* Removed footer-top-row and theme toggle */}
+    
 
       <div className="footer-inner">
         <div className="footer-column">
