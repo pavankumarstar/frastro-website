@@ -136,7 +136,7 @@ const About = () => {
           <div className="image-wrapper">
             <img
               className="about-image"
-              src="https://i.pinimg.com/736x/af/3a/54/af3a54183372687dc2954c2a3d83c836.jpg"
+              src="/images/about/two.jpg"
               alt="Stella Mars"
             />
             <div className="image-overlay" />

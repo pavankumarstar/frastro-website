@@ -98,8 +98,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  max-width: 320px;         /* keep it narrow on mobile stacks */
+  margin: 0 auto;
+  overflow: hidden;         /* <-- key: prevents horizontal overflow */
 }
-
 /* Outer rotating circle */
 .circle-animation {
   position: absolute;
@@ -114,8 +117,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 0;
+  pointer-events: none;     /* avoids accidental touches */
 }
-
 @keyframes spin {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -143,3 +146,26 @@
   text-align: left;
 }
 
+@media (max-width: 768px) {
+  .circle-animation {
+    width: min(70vw, 340px);   /* responsive instead of fixed 500px */
+    height: min(70vw, 340px);
+  }
+  .service-center .service-image {
+    width: min(60vw, 220px);
+  }
+  .services-content {
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+  }
+  .service-card {
+    width: 100%;
+    max-width: 90vw;
+  }
+}
+
+/* Optional: belt-and-suspenders in case another element overflows */
+.our-services {
+  overflow-x: hidden;
+}
