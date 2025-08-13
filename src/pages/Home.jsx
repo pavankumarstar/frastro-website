@@ -9,49 +9,45 @@ import SacredPooja from '../components/SacredPooja';
 import Faq from '../components/Faq';
 import Carousell from '../components/Home/Carousell';
 import AstroSection from '../components/Home/AstroSection';
-import Header from '../components/Header';
 
-const Home = ({ showHeader }) => {
+const Home = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
   const [highlight, setHighlight] = useState("");
 
   return (
-    <>
-      {showHeader && <Header highlight={highlight} />}
-
-      <div className="home">
-        <div
-          onMouseEnter={() => setHighlight("home")}
-          onMouseLeave={() => setHighlight("")}
-        >
-          <Carousell />
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div
-            onMouseEnter={() => setHighlight("about")}
-            onMouseLeave={() => setHighlight("")}
-          >
-            <AstroSection />
-          </div>
-        </motion.div>
-
-        <div
-          onMouseEnter={() => setHighlight("services")}
-          onMouseLeave={() => setHighlight("")}
-        >
-          <Cards />
-        </div>
-
-        <Faq />
-        <SacredPooja />
-        <ClientTestimonials />
+    <div className="home">
+      
+      <div
+        onMouseEnter={() => setHighlight("home")}
+        onMouseLeave={() => setHighlight("")}
+      >
+        <Carousell />
       </div>
-    </>
+
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div
+          onMouseEnter={() => setHighlight("about")}
+          onMouseLeave={() => setHighlight("")}
+        >
+          <AstroSection />
+        </div>
+      </motion.div>
+
+      <div
+        onMouseEnter={() => setHighlight("services")}
+        onMouseLeave={() => setHighlight("")}
+      >
+        <Cards />
+      </div>
+
+      <Faq />
+      <SacredPooja />
+      <ClientTestimonials />
+    </div>
   );
 };
 

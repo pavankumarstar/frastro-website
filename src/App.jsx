@@ -30,6 +30,8 @@ import AstroAlert from './components/AstroAlert';
 
 function App() {
   const [showAlert, setShowAlert] = useState(true);
+  const [highlight, setHighlight] = useState("");
+
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -42,10 +44,11 @@ function App() {
 
       {/* Show AstroAlert only if true */}
       {showAlert && <AstroAlert onClose={() => setShowAlert(false)} />}
+        <Header/>
 
       <main className="min-h-screen bg-black text-white p-6">
         <Routes>
-          <Route path="/" element={<Home showHeader={true} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/location" element={<Location />} />
