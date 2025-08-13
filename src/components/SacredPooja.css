@@ -87,20 +87,41 @@ h2 span {
 .text-muted {
   color: #ccc !important;
 }
-@media screen and (min-width: 768px) {
+/* Mobile view: one card fills screen, snap scroll */
+@media (max-width: 768px) {
   .horizontal-scroll-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    grid-template-rows: repeat(2, auto);   /* 2 rows */
-    gap: 1.5rem;
-    overflow: visible;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    padding: 1rem;
   }
 
   .scroll-card {
+    flex: 0 0 100%; /* Full width of screen */
+    scroll-snap-align: start;
+    height: 100vh; /* Full screen height (optional) */
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scroll-card img {
     width: 100%;
-    min-width: unset;
+    height: 50%; /* Top half image */
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .scroll-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
   }
 }
+
 
 /* Equal height cards in mobile view */
 @media (max-width: 768px) {

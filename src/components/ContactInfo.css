@@ -41,3 +41,20 @@
 .info-box a:hover {
   text-decoration: underline;
 }
+@media (max-width: 768px) {
+  .contact-info-container {
+    flex-wrap: nowrap; /* All in one row */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Snap scrolling */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 0; /* No gap so it fills screen */
+  }
+
+  .info-box {
+    flex: 0 0 100%; /* Each takes full screen width */
+    max-width: 100%;
+    min-width: 100%;
+    scroll-snap-align: start;
+  }
+}
