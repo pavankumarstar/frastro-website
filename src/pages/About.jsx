@@ -27,7 +27,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.7, ease: 'easeOut' },
+    transition: { duration: 0.6, ease: 'easeOut' },
   },
 };
 
@@ -36,8 +36,8 @@ const About = () => {
     <div className="">
       <div className="contact-header">
         <img
-          src="/images/about/one.jpeg"
-          alt="Decorative header for about"
+          src="/images/about/15.jpg"
+          alt="/images/about/13.jpg"
           className="header-image"
           aria-hidden="true"
         />
@@ -66,14 +66,14 @@ const About = () => {
         </motion.h1>
       </div>
     <div className='about-section'>
-      <motion.div
+      <div
         className="about-inner"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.35 }}
-        variants={containerVariants}
+        
       >
-        <motion.div
+        <div
           className="about-left"
           variants={itemVariants}
         >
@@ -127,7 +127,7 @@ const About = () => {
                 </button>
               </a>
           </div>
-        </motion.div>
+        </div>
 
         <motion.div
           className="about-right"
@@ -142,7 +142,7 @@ const About = () => {
             <div className="image-overlay" />
           </div>
         </motion.div>
-      </motion.div>
+      </div>
     </div>
     <div>
       {/* <Map/> */}
