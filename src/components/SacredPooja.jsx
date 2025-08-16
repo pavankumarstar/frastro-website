@@ -46,7 +46,7 @@ const poojaData = [
       "Master Raj invokes Lord Krishna’s grace to bring love, joy, emotional healing, and harmony in personal relationships through sacred rituals.",
     tags: ["Love", "Joy", "Harmony"],
     image:
-      "/images/pooja/Krishna1.jpg",
+      "/images/pooja/Krishna2.jpg",
   },
   {
     title: "Lakshmi Maa Pooja",
