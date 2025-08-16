@@ -4,20 +4,20 @@ import './Faq.css';
 
 const faqData = [
   {
-    question: 'How do astrologers help?',
-    answer: 'Astrologers provide insights through birth chart analysis, helping with relationships, life decisions, emotional well-being, and career guidance.',
+    question: 'How do Master Raj help?',
+    answer: 'Master Raj provide insights through birth chart analysis, helping with relationships, life decisions, emotional well-being, and career guidance.',
   },
   {
-    question: 'Can astrology predict marriage?',
-    answer: 'TYes, by analyzing planetary positions, dashas, and transits in your birth chart, particularly focusing on Jupiters influence.',
+    question: 'Can Master Raj  predict marriage?',
+    answer: 'Yes, by analyzing planetary positions, dashas, and transits in your birth chart, particularly focusing on Jupiters influence.',
   },
   {
-    question: 'How does astrology predict marriage timing?',
+    question: 'How does Master Raj predict marriage timing?',
     answer: 'Through examination of dasha periods, planetary transits, and specific marriage yogas in the birth chart.',
   },
   {
-    question: 'Is Psychic service accurate in Candan?',
-    answer: 'Absolutely, with numerous satisfied clients in Candan benefiting from his accurate readings and spiritual guidance.',
+    question: 'Is Psychic Raj service accurate in Canada?',
+    answer: 'Absolutely, with numerous satisfied clients in Canada benefiting from his accurate readings and spiritual guidance.',
   },
 ];
 
