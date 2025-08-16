@@ -108,7 +108,7 @@ const About = () => {
     precisely predicts about your Health matters.  
     Our expert also works as a 
     <b className="highlight-purple"> Palm Specialist</b> and 
-    <b className="highlight-red"> Black Specialist</b>, helping people overcome 
+    <b className="highlight-red"> Black Magic Specialist</b>, helping people overcome 
     life’s hidden challenges with spiritual insight.
   </p>
 </div>
