@@ -1,13 +1,21 @@
 import React from 'react';
 
-import image1 from '../../assets/images/love-black.jpg';
-import image2 from '../../assets/images/palm-reading.jpg';
-import image3 from '../../assets/images/spiritual-healing.jpg';
+import image1 from '../../assets/images/carousel/one1.jpg';
+import image2 from '../../assets/images/carousel/one2.jpg';
+import image3 from '../../assets/images/carousel/one3.jpg';
+
+import './Carousell.css'; // Assuming you have some styles for the carousel
 
 const Carousell = () => {
   return (
     <div className="container-fluid p-0">
-      <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
+      <div
+        id="carouselExampleControls"
+        className="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="3000"   // autoplay speed
+        data-bs-pause="hover"     // pause on hover
+      >
         <div className="carousel-inner">
           <div className="carousel-item active">
             <img className="d-block w-100 img-fluid" src={image1} alt="First slide" />
@@ -20,15 +28,25 @@ const Carousell = () => {
           </div>
         </div>
 
-        {/* Optional Prev/Next Controls */}
-        <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        {/* Prev Button */}
+        <button
+          className="carousel-control-prev no-bg"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span className="sr-only">Previous</span>
-        </a>
-        <a className="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        </button>
+
+        {/* Next Button */}
+        <button
+          className="carousel-control-next no-bg"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
-          <span className="sr-only">Next</span>
-        </a>
+        </button>
       </div>
     </div>
   );

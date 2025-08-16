@@ -1,0 +1,21 @@
+/* Remove background from next/prev buttons */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;          /* make buttons slimmer */
+  background: none !important;
+  border: none;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1) brightness(1.2); /* makes icons white & visible */
+  width: 40px;
+  height: 40px;
+}
+
+/* Optional: remove orange focus outline */
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+  outline: none;
+  box-shadow: none;
+}
