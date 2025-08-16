@@ -92,3 +92,10 @@
     margin-right: 0; /* Remove margin between buttons */
   }
 }
+.section-content b {
+  color: #b30059;
+  font-weight: bold;
+  background: linear-gradient(90deg, #ffe4ec, transparent);
+  padding: 0 3px;
+  border-radius: 3px;
+}

@@ -55,10 +55,10 @@ const Contact = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        DIVINE <span className="highlight">ASSISTANCE</span>
+        DIVINE <span className="highlight">ASSISTANCE</span> OF MASTER RAJ
       </motion.h2>
       <p className="subtitle">
-       Divine assistance of Astrologers active involvement in our lives to support and guide us.
+       Divine assistance of <b>Master Raj</b> active involvement in our lives to support and guide us.
       </p>
 
       <motion.div

@@ -87,14 +87,32 @@ const About = () => {
             <div className="arrow">→</div>
           </div>
 
-          <div className="about-description">
-            <p>
-              Pandit Raj Astrologer in Canada with 25 years of experience in Astrology, Vastu-Shastra & Spiritualism. Astro means Astrology or Jyotisha and Science means its study. This study of science is completely based on the impact of planetary forces on the life on earth. Astro means Astrology or Jyotisha and Science means its study. This study of science is completely based on the impact of planetary forces on the life on earth. Be it human beings, or animals, or trees and plants, whoever has life on planet earth for them there is a certain astrological impact. Astroscience is in depth study and research of Planets, Zodiac signs from Aries to Pisces, 27 Nakshatra and 12 houses of Birthchart or Kundali.
-            </p>
-            <p>
-              Many areas of our life like our Personality, Characteristics, our Taste, Behavior and Looks can be easily derived by analyzing these things in the Horoscope. Infact, Astrology can also reveal many things from your Past, Present and Future. Vedic Astrology or Jyotisha can play a very important role for providing guidance about your Career field, Relationships, Education, Finance, and astrology also precisely predicts about your Health matters.
-            </p>
-          </div>
+         <div className="about-description">
+  <p>
+    <b className="highlight-orange">Pandit Raj Astrologer</b> in Canada with 25 years 
+    of experience in Astrology, Vastu-Shastra & 
+    <b className="highlight-green"> Spiritualist</b>. Astro means Astrology or Jyotisha 
+    and Science means its study. This study of science is completely based on the 
+    impact of planetary forces on life on earth. Be it human beings, or animals, 
+    or trees and plants, whoever has life on planet earth for them there is a certain 
+    astrological impact. Astroscience is in depth study and research of Planets, 
+    Zodiac signs from Aries to Pisces, 27 Nakshatra and 12 houses of Birthchart or Kundali.
+  </p>
+
+  <p>
+    Many areas of our life like our Personality, Characteristics, our Taste, Behavior 
+    and Looks can be easily derived by <b>Master Raj</b> these things in the Horoscope. Infact, 
+    Astrology can also reveal many things from your Past, Present and Future. 
+    Vedic Astrology or Jyotisha can play a very important role for providing guidance 
+    about your Career field, Relationships, Education, Finance, and <b>Master Raj </b>  
+    precisely predicts about your Health matters.  
+    Our expert also works as a 
+    <b className="highlight-purple"> Palm Specialist</b> and 
+    <b className="highlight-red"> Black Specialist</b>, helping people overcome 
+    life’s hidden challenges with spiritual insight.
+  </p>
+</div>
+
 
           <div className="social-icons">
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">

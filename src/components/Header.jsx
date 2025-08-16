@@ -82,18 +82,8 @@ const Header = ({ highlight }) => {
                   variants={menuVariants}
                 >
                   <motion.div variants={itemVariants}>
-                    <NavLink to="/services/love-marriage" onClick={() => { setMenuOpen(false); setServicesOpen(false); }}>
-                      Love Marriage
-                    </NavLink>
-                  </motion.div>
-                   <motion.div variants={itemVariants}>
-                    <NavLink to="/services/evil-eye" onClick={() => { setMenuOpen(false); setServicesOpen(false); }}>
-                      Evil Eye
-                    </NavLink>
-                  </motion.div>
-                  <motion.div variants={itemVariants}>
                     <NavLink to="/services/love-problem" onClick={() => { setMenuOpen(false); setServicesOpen(false); }}>
-                      Love Problem
+                      Get Ex Love Back
                     </NavLink>
                   </motion.div>
                   <motion.div variants={itemVariants}>
@@ -102,8 +92,28 @@ const Header = ({ highlight }) => {
                     </NavLink>
                   </motion.div>
                   <motion.div variants={itemVariants}>
+                    <NavLink to="/services/love-marriage" onClick={() => { setMenuOpen(false); setServicesOpen(false); }}>
+                      Love Marriage
+                    </NavLink>
+                  </motion.div>
+                   <motion.div variants={itemVariants}>
+                    <NavLink to="/services/business-problems" onClick={() => { setMenuOpen(false); setServicesOpen(false); }}>
+                      Business Problem
+                    </NavLink>
+                  </motion.div>
+                  <motion.div variants={itemVariants}>
                     <NavLink to="/services/palm-reading" onClick={() => { setMenuOpen(false); setServicesOpen(false); }}>
                       Palm Reading
+                    </NavLink>
+                  </motion.div>
+                  <motion.div variants={itemVariants}>
+                    <NavLink to="/services/tarot-reading" onClick={() => { setMenuOpen(false); setServicesOpen(false); }}>
+                      VooDoo Witchcraft
+                    </NavLink>
+                  </motion.div>
+                   <motion.div variants={itemVariants}>
+                    <NavLink to="/services/evil-eye" onClick={() => { setMenuOpen(false); setServicesOpen(false); }}>
+                      Evil Eye
                     </NavLink>
                   </motion.div>
                   <motion.div variants={itemVariants}>
@@ -121,16 +131,8 @@ const Header = ({ highlight }) => {
                       Family Problems
                     </NavLink>
                   </motion.div>
-                  <motion.div variants={itemVariants}>
-                    <NavLink to="/services/business-problems" onClick={() => { setMenuOpen(false); setServicesOpen(false); }}>
-                      Business
-                    </NavLink>
-                  </motion.div>
-                  <motion.div variants={itemVariants}>
-                    <NavLink to="/services/tarot-reading" onClick={() => { setMenuOpen(false); setServicesOpen(false); }}>
-                      Tarot Reading
-                    </NavLink>
-                  </motion.div>
+                 
+                  
                 </motion.div>
               )}
             </AnimatePresence>

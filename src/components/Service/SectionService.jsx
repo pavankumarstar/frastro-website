@@ -4,8 +4,38 @@ import { useNavigate } from 'react-router-dom';
 
 const SectionService = ({ buttonLabels, contentData }) => {
   const [activeIndex, setActiveIndex] = useState(0);
-   const navigate = useNavigate();
-  const { paragraph1,header, imageSrc, paragraph2, paragraph3 } = contentData[activeIndex];
+  const navigate = useNavigate();
+  const { paragraph1, header, imageSrc, paragraph2, paragraph3 } = contentData[activeIndex];
+
+  // ✅ highlight keywords directly here
+  const highlightText = (text) => {
+    if (!text) return "";
+    const keywords = [
+      "Master Raj",
+      "Ex love back solution astrologer",
+      "Love marriage astrology specialist",
+      "Love marriage specialist",
+      "Love marriage problem solution",
+      "Palm Specialist",
+      "Black Magic Specialist",
+      "Black Magic Removal",
+      "Business astrology solutions",
+      "Love Problem Specialist",
+      "Get Ex Love Specialist",
+      "Astrology Remedies",
+      "Best astrologer for evil eye problems",
+      "Evil Eye Specialist",
+      "Voodoo Specialist",
+      "Evil eye removal astrology",
+      "Best astrologer for family problems",
+    ];
+    let highlighted = text;
+    keywords.forEach((word) => {
+      const regex = new RegExp(`(${word})`, "gi");
+      highlighted = highlighted.replace(regex, "<b>$1</b>");
+    });
+    return highlighted;
+  };
 
   const handleAppointmentClick = () => {
     navigate('/contact');
@@ -13,6 +43,7 @@ const SectionService = ({ buttonLabels, contentData }) => {
 
   return (
     <div className="section-service">
+      {/* Tabs */}
       <div className="tab-buttons">
         {buttonLabels.map((label, index) => (
           <button
@@ -25,19 +56,21 @@ const SectionService = ({ buttonLabels, contentData }) => {
         ))}
       </div>
 
+      {/* Content */}
       <div className="section-content">
-        <h2>{header}</h2>
-        <p>{paragraph1}</p>
+        <h2 dangerouslySetInnerHTML={{ __html: highlightText(header) }}></h2>
+        <p dangerouslySetInnerHTML={{ __html: highlightText(paragraph1) }}></p>
         <div className="section-row">
           <div className="section-image">
-            <img src={imageSrc} alt="Palm Reading Visual" />
+            <img src={imageSrc} alt="Service Visual" />
           </div>
           <div className="section-text">
-            <p>{paragraph2}</p>
-            <p>{paragraph3}</p>
+            <p dangerouslySetInnerHTML={{ __html: highlightText(paragraph2) }}></p>
+            <p dangerouslySetInnerHTML={{ __html: highlightText(paragraph3) }}></p>
           </div>
         </div>
 
+        {/* Appointment Button */}
         <div className="appointment-button-container">
           <button className="appointment-button" onClick={handleAppointmentClick}>
             Book Appointment

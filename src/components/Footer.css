@@ -192,19 +192,19 @@
 @media (max-width: 600px) {
   .footer-inner {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: left;   /* 👈 Change from center → left */
   }
 
   .social-row {
-    justify-content: center;
+    justify-content: flex-start; /* 👈 Align social icons to left */
   }
 
   .footer-column h3::after {
-    margin-left: auto;
+    margin-left: 0;  /* 👈 Keep underline aligned left */
     margin-right: auto;
   }
 
   .footer-top-row {
-    justify-content: center;
+    justify-content: flex-start; /* 👈 Align toggle row left */
   }
 }

@@ -16,11 +16,19 @@ const AstroSection = () => {
         <h1>
           We Can Use Astrology  <br />To Find Your Future
         </h1>
-        <p>
-          With decades of experience in Vedic astrology, Black Magic removal, and Palm Reading, Astrologer Master Raj has helped countless individuals break free from unseen forces and uncover the secrets written in their palms.
+       <p className="leading-relaxed text-gray-700">
+  With decades of experience in{" "}
+  <span className="font-semibold text-orange-600"><b>Palm Specialist</b></span>,{" "}
+  <span className="font-semibold text-purple-600">Black Magic Removal</span>, 
+  and Palm Reading, <b>Astrologer Master Raj</b> has helped countless individuals 
+  break free from unseen forces and uncover the secrets written in their palms.
+  <br /><br />
+  Whether you're trapped by negative energies, mysterious setbacks, or seeking 
+  clarity through the lines on your hand, his <b>spiritual  Specialist</b> insight offers powerful 
+  protection and peace. Each session is rooted in ancient wisdom, offering 
+  personalized guidance for a better tomorrow.
+</p>
 
-Whether you're trapped by negative energies, mysterious setbacks, or seeking clarity through the lines on your hand, his spiritual insight offers powerful protection and peace. Each session is rooted in ancient wisdom, offering personalized guidance for a better tomorrow.
-        </p>
         <ul>
           <li>🌞 Astrology is just a finger pointing at reality</li>
           <li>🌞 Millionaires don’t have astrologers, billionaires do</li>
