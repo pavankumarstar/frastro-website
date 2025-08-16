@@ -40,13 +40,13 @@ const poojaData = [
       "/images/pooja/Shiva.jpg",
   },
   {
-    title: "Krishna Pooja",
+    title: "Radha Krishna Pooja",
     duration: "3 Hours",
     description:
       "Master Raj invokes Lord Krishna’s grace to bring love, joy, emotional healing, and harmony in personal relationships through sacred rituals.",
     tags: ["Love", "Joy", "Harmony"],
     image:
-      "/images/pooja/one.jpg",
+      "/images/pooja/two.jpg",
   },
   {
     title: "Lakshmi Maa Pooja",
