@@ -27,8 +27,8 @@ const About = () => {
     <div className="">
       <div className="contact-header">
         <img
-          src="/images/about/13.png"
-          alt="/images/about/15.png"
+          src="/images/about/ten1.png"
+          alt="/images/about/ten2.png"
           className="header-image"
           aria-hidden="true"
         />
