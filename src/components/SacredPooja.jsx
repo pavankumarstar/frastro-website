@@ -10,7 +10,7 @@ const poojaData = [
       "Master Raj performs powerful rituals to invoke Goddess Kali for protection, strength, and the removal of negative energies—bringing peace, power, and transformation to your life.",
     tags: ["Protection", "Transformation"],
     image:
-      "/images/pooja/Kalli3.jpg",
+      "/images/pooja/six.jpg",
   },
   {
     title: "Hanuman Pooja",
@@ -46,7 +46,7 @@ const poojaData = [
       "Master Raj invokes Lord Krishna’s grace to bring love, joy, emotional healing, and harmony in personal relationships through sacred rituals.",
     tags: ["Love", "Joy", "Harmony"],
     image:
-      "/images/pooja/Krishna2.jpg",
+      "/images/pooja/one.jpg",
   },
   {
     title: "Lakshmi Maa Pooja",
