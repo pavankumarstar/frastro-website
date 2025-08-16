@@ -36,8 +36,8 @@ const About = () => {
     <div className="">
       <div className="contact-header">
         <img
-          src="/images/about/15.jpg"
-          alt="/images/about/13.jpg"
+          src="/images/about/1.jpeg"
+          alt="/images/about/2.jpeg"
           className="header-image"
           aria-hidden="true"
         />
