@@ -12,15 +12,6 @@ const zodiacItems = [
   { label: 'Aquarius', symbol: '♒' },
 ];
 
-const containerVariants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.18,
-      when: 'beforeChildren',
-    },
-  },
-};
 
 const itemVariants = {
   hidden: { opacity: 0, y: 25 },
@@ -36,8 +27,8 @@ const About = () => {
     <div className="">
       <div className="contact-header">
         <img
-          src="public/images/about/four.jpg"
-          alt="public/images/about/three.jpg"
+          src="/images/about/13.png"
+          alt="/images/about/15.png"
           className="header-image"
           aria-hidden="true"
         />
